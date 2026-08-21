@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hướng dẫn Setup Trung Tâm trên Flyer Teacher</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="hero">
+  <span class="eyebrow">FLYER · TÀI LIỆU NỘI BỘ</span>
+  <h1>Hướng dẫn Setup Trung Tâm trên Flyer Teacher</h1>
+  <p>Luồng thao tác dành cho admin trung tâm sau khi nhận tài khoản đã được kích hoạt — từ đăng nhập,
+     dựng lớp, tạo tài khoản học sinh, thêm giáo viên, giao bài tập cho đến xem lại lịch sử &amp; kết quả.</p>
+</div>
+
+<div class="stepper-wrap">
+  <nav class="stepper" id="stepper"></nav>
+</div>
+
+<main id="steps-container"></main>
+
+<footer>
+  Tài liệu nội bộ · Flyer SWAT · Cập nhật theo tiến độ chụp ảnh — một số bước sẽ được bổ sung thêm hình minh hoạ.
+</footer>
+
+<script>
+const STEPS = [
+  {
+    id: "step-0", num: "0",
+    title: "Đăng nhập & Bắt đầu nhanh",
+    summary: "Truy cập hệ thống lần đầu và làm quen giao diện quản trị.",
+    desc: "Sau khi Flyer kích hoạt tài khoản cho trung tâm, giáo viên/quản trị viên truy cập <strong>https://teacher.flyer.us/</strong> và đăng nhập bằng số điện thoại hoặc tên đăng nhập đã đăng ký với Flyer (hoặc đăng nhập nhanh bằng Google). Sau khi vào hệ thống, màn hình <em>“Bắt đầu nhanh”</em> sẽ hiện gợi ý các việc nên làm trước — đây cũng là nơi có thể quay lại bất cứ lúc nào để xem lại hướng dẫn nhanh trong sản phẩm.",
+    docs: [
+      { label: "Đăng ký tài khoản giáo viên", url: "https://help.flyer.vn/danh-cho-giao-vien/dang-ky-dang-nhap-tai-khoan/dang-ky-tai-khoan-giao-vien" },
+      { label: "Kích hoạt tài khoản", url: "https://help.flyer.vn/flyer/kich-hoat-tai-khoan" }
+    ],
+    video: null,
+    slides: [
+      { img: "img/11_login.png", caption: "Bước 1: Nhập số điện thoại hoặc tên đăng nhập giáo viên đã đăng ký với Flyer (hoặc bấm “Đăng Nhập Với Google”) tại https://teacher.flyer.us/ để vào hệ thống." },
+      { img: "img/0.dashbroad.png", caption: "Màn hình chào mừng ngay sau khi đăng nhập thành công. Thanh “0% Hoàn thành” ở dưới gợi ý 2 việc nên thử trước: khám phá kho 6000+ bài tập và khám phá chương trình giảng dạy." }
+    ]
+  },
+  {
+    id: "step-1", num: "1",
+    title: "Tạo lớp học",
+    summary: "Dựng khung lớp trước khi thêm học sinh vào.",
+    desc: "Vào mục <strong>Quản Lý Lớp</strong> ở menu trái để xem toàn bộ danh sách lớp của trung tâm, sau đó bấm <strong>“Tạo lớp mới”</strong>. Ở bước tạo lớp, chọn loại lớp phù hợp, đặt tên lớp theo quy ước dễ quản lý (ví dụ: tên trung tâm + mã lớp), và có thể gắn sẵn khoá học/mục tiêu học tập hàng tuần cho lớp nếu muốn theo dõi tiến độ.",
+    docs: [],
+    video: "https://drive.google.com/file/d/1lJAsUbvV_TGRHpT4r5ZoUw60sWotODAT/view?usp=drive_link",
+    slides: [
+      { img: "img/2.0themlop_xoademo.png", caption: "Mục Quản Lý Lớp hiển thị toàn bộ danh sách lớp hiện có. Các lớp gắn nhãn “[Sample]” là lớp mẫu demo có sẵn — trung tâm có thể xoá sau khi đã quen giao diện. Bấm “Tạo lớp mới” ở góc phải để bắt đầu." },
+      { img: "img/2.3themlop.png", caption: "Bước 2 khi tạo lớp: chọn Loại lớp, đặt Tên lớp, chọn Khoá học (tuỳ chọn) và thiết lập Mục tiêu thời gian học hàng tuần nếu muốn bật thông báo mục tiêu cho học sinh. Bấm “Xác nhận” để hoàn tất." }
+    ]
+  },
+  {
+    id: "step-2", num: "2",
+    title: "Tạo tài khoản học sinh",
+    summary: "Cấp tài khoản, xếp lớp và chọn gói học cho từng học sinh.",
+    desc: "Vào mục <strong>Học Sinh</strong> → <strong>“Thêm học sinh”</strong> để tạo tài khoản mới theo dạng nhập tay từng dòng, hoặc dùng file mẫu .xlsx để tải lên hàng loạt. Khi đặt tên đăng nhập, nên theo cấu trúc <em>Tên trường + Lớp + Tên học sinh</em> (hoặc mã trường + mã lớp + mã học sinh) để tránh trùng với học sinh ở trung tâm khác trong hệ thống Flyer. Sau khi nhập xong thông tin, chọn gói học và thời hạn phù hợp, đặt mật khẩu cố định để gửi cho phụ huynh, rồi xác nhận để hệ thống tạo tài khoản và cho phép gửi thông tin đăng nhập qua email.",
+    docs: [
+      { label: "Tạo tài khoản mới cho học sinh", url: "https://help.flyer.vn/danh-cho-giao-vien/quan-ly-tai-khoan-hoc-sinh/tao-tai-khoan-moi-cho-hoc-sinh" },
+      { label: "Mời học sinh tham gia trường, lớp", url: "https://help.flyer.vn/danh-cho-giao-vien/quan-ly-tai-khoan-hoc-sinh/moi-hoc-sinh-tham-gia-truong-lop" }
+    ],
+    video: "https://drive.google.com/file/d/1QLKhgEHPH4wJ7RB4EpSZ7JVuoHIVliAx/view?usp=drive_link",
+    slides: [
+      { img: "img/3.1themhs.png", caption: "Vào mục Học Sinh, bấm “Thêm học sinh” để tạo nhanh tài khoản học sinh mới (khác với “Mời học sinh” — dùng khi học sinh đã tự có tài khoản Flyer và chỉ cần mời vào lớp)." },
+      { img: "img/3.2themhs.png", caption: "Bước 1: nhập Họ, Tên, chọn Lớp và đặt Tên đăng nhập cho học sinh. Lưu ý cấu trúc đặt tên đăng nhập được gợi ý ngay trên form để tránh trùng lặp trong hệ thống." },
+      // { img: "img/3.3themhs.png", caption: "Có thể thêm nhiều học sinh cùng lúc bằng nút “Thêm học sinh” (thêm dòng) hoặc kéo thả file Excel theo mẫu có sẵn ở khung “Tải lên” bên phải. Bên phải cũng là nơi chọn Gói và Thời hạn sử dụng cho (các) học sinh." },
+      { img: "img/3.4themhs.png", caption: "Bước 3.3: chọn Gói hiện tại (ví dụ Cambridge (All levels) & TOEFL) và Thời hạn sử dụng (khuyến nghị 1 năm). Hệ thống sẽ tự tính số Xu cần trừ từ Ví của trung tâm." },
+      { img: "img/3.5themhs.png", caption: "Bước 3.5: đặt Mật khẩu cố định cho (các) tài khoản vừa tạo — mật khẩu này sẽ được gửi kèm cho phụ huynh/học sinh nên nên đặt đơn giản, dễ đọc." },
+      { img: "img/3.6themhs.png", caption: "Sau khi xác nhận, hệ thống hiển thị bảng danh sách tài khoản đã tạo (mã lớp, tên đăng nhập, mật khẩu, email). Bấm “Gửi mail” để gửi thẳng thông tin đăng nhập cho phụ huynh/học sinh, hoặc “Xuất hoá đơn” nếu trung tâm cần lưu chứng từ." }
+    ]
+  },
+  {
+    id: "step-3", num: "3",
+    title: "Thêm giáo viên & phân công lớp",
+    summary: "Mời giáo viên vào trường và gán lớp phụ trách.",
+    desc: "Quản trị viên trung tâm vào mục quản lý trường để <strong>mời giáo viên</strong> tham gia (qua email/số điện thoại/tên đăng nhập Flyer đã có sẵn của giáo viên), sau đó phân công giáo viên phụ trách từng lớp trong <strong>Quản Lý Lớp</strong>. Lưu ý: giáo viên cần hoàn thiện đầy đủ thông tin hồ sơ (teacher profile) khi tạo tài khoản thì mới có thể được thêm vào trường.",
+    docs: [
+      { label: "Mời giáo viên, quản trị viên tham gia trường", url: "https://help.flyer.vn/danh-cho-nha-quan-ly/quan-ly-giao-vien-trong-truong/moi-giao-vien-quan-tri-vien-tham-gia-truong" }
+    ],
+    video: "https://drive.google.com/file/d/18hokcoZqp46TTl-5YMCUda45WLryIyG_/view?usp=sharing",
+    slides: [
+      { img: "img/7.0giaovien.png", caption: "Vào menu trái, mở mục Thiết Lập Trường Học → Giáo viên để xem danh sách toàn bộ giáo viên đang có trong trường/trung tâm." },
+      { img: "img/7.11giaovien.png", caption: "Bấm nút “Thêm giáo viên” ở góc phải để mời thêm giáo viên mới tham gia trường." },
+      { img: "img/3.1giaovien.png", caption: "Ở popup “Mời thêm người”, chọn cách mời (qua thư điện tử / số điện thoại / tên tài khoản), nhập thông tin (nhiều người thì ngăn cách bằng dấu phẩy) rồi bấm “Gửi lời mời”. Giáo viên cần hoàn thiện hồ sơ (teacher profile) thì mới có thể được thêm vào trường." },
+      { img: "img/7.3giaovien.png", caption: "Để phân công lớp cho giáo viên: (1) tick chọn giáo viên trong danh sách, (2) bấm “Thêm vào lớp”, (3) chọn lớp cần giao ở ô “Chọn lớp”, (4) bấm “Phân công lớp” để hoàn tất." }
+    ]
+  },
+  {
+    id: "step-4", num: "4",
+    title: "Giao bài tập cho học sinh",
+    summary: "3 cách giao bài: từ kho bài có sẵn, theo cả một chương trình, hoặc bài tự soạn riêng của trung tâm.",
+    desc: "Flyer Teacher hỗ trợ <strong>3 cách giao bài</strong> tuỳ theo nhu cầu: giao nhanh một bài lẻ từ kho <strong>Khám Phá</strong>, giao cả lộ trình có sẵn trong <strong>Chương Trình</strong> (có thể tự động hoá theo lịch tuần), hoặc giao bài do chính trung tâm tự biên soạn. Chi tiết từng cách được hướng dẫn ở 3 phần dưới đây.",
+    docs: [],
+    video: null,
+    parts: [
+      {
+        title: "Giao bài trong Khám Phá",
+        desc: "Mục <strong>Khám Phá</strong> là kho hơn 6000 bài tập có sẵn. Gõ từ khoá chủ đề cần dạy vào ô tìm kiếm, sau đó lọc theo <em>Nguồn</em> (nên ưu tiên “Kho học liệu FLYER” vì là bài chuẩn do đội ngũ Flyer biên soạn), <em>Cấp độ</em>, <em>Chứng chỉ</em> (IELTS, TOEFL Primary, Starters, Movers, Flyers…) và <em>Kỹ năng</em> (Nghe/Đọc/Nói/Viết). Xem trước nội dung bài trước khi giao, rồi bấm “Assign as homework” (Giao bài tập) để chọn học sinh/lớp nhận bài và thiết lập thời gian bắt đầu, hạn nộp.",
+        docs: [
+          { label: "Giao bài tập từ trang Khám phá", url: "https://help.flyer.vn/danh-cho-giao-vien/giao-bai-tap-bai-kiem-tra/giao-bai-tap-tu-trang-kham-pha" }
+        ],
+        video: "https://drive.google.com/file/d/1hqZ7Fs3ciU-6DvlNTrj0KLu1stRKoT6s/view?usp=sharing",
+        slides: [
+          { img: "img/4.0giaobai_khampha.png", caption: "Ô tìm kiếm “What will you teach today?” — gõ chủ đề cần dạy (ví dụ “weather”) để hệ thống gợi ý ngay các bài tập/chủ đề liên quan." },
+          { img: "img/4.1giaobai_khampha.png", caption: "Dùng bộ lọc để thu hẹp kết quả: Nguồn (Kho học liệu FLYER / Cộng đồng / Riêng tư), Cấp độ (Pre A1 → B2), Chứng chỉ (IELTS, TOEFL Primary, Starters, Movers, Flyers) và Kỹ năng (Nghe, Đọc, Nói, Viết)." },
+          { img: "img/4.11giaobai_khampha.png", caption: "Bấm vào một bài tập để xem nhanh nội dung ngay trong popup preview, kèm các nút thao tác: Create challenge (tạo thách đấu), Preview (xem trước), Assign as homework (giao bài), Open (mở chi tiết)." },
+          { img: "img/4.12giaobai_khampha.png", caption: "Trang chi tiết bài tập hiển thị đầy đủ câu hỏi, số điểm, thời lượng làm bài — vẫn có thể “Assign as homework” hoặc “Create a new challenge” ngay tại đây." },
+          { img: "img/4.3giaobai_khampha.png", caption: "Khi giao bài: Bước 1 xác nhận bài đã chọn, Bước 2 chọn học sinh/lớp nhận bài, sau đó thiết lập Thời gian bắt đầu, Hạn nộp, tuỳ chọn ẩn đáp án hoặc bật chế độ mô phỏng kiểm tra, rồi bấm “Giao bài”." }
+        ]
+      },
+      {
+        title: "Giao bài theo Chương Trình",
+        desc: "Mục <strong>Chương Trình</strong> chứa các giáo trình đầy đủ (Get Ready for Starters/Movers/Flyers, Everybody Up…) được chia theo Unit/bài học. Sau khi chọn chương trình phù hợp với lớp, dùng nút <strong>“Giao bài tự động”</strong> để thiết lập lịch giao bài định kỳ (chọn lớp, ngày trong tuần, ngày bắt đầu/kết thúc, giờ giao bài, hạn nộp) — hệ thống sẽ tự động giao lần lượt từng bài học theo đúng lịch đã đặt mà không cần giao tay từng buổi.",
+        docs: [
+          { label: "Chương trình", url: "https://help.flyer.vn/danh-cho-giao-vien/chuong-trinh" }
+        ],
+        video: "https://drive.google.com/file/d/1--3is9vNMgLltRtq4Y-VaYbqS9Guyx2i/view?usp=sharing",
+        slides: [
+          { img: "img/5.1giaobai_chuongtrinh.png", caption: "Danh sách Chương Trình có sẵn (FLYER Original, Cộng đồng, Chương trình của trường/của tôi). Dùng ô tìm kiếm hoặc lọc theo cấp độ để tìm nhanh giáo trình phù hợp, ví dụ “Get ready for Starters”." },
+          { img: "img/5.2giaobai_chuongtrinh.png", caption: "Trang chi tiết chương trình liệt kê toàn bộ Unit/bài học. Bấm “Giao bài tự động” để thiết lập lịch giao bài định kỳ cho cả lớp thay vì giao thủ công từng bài." },
+          { img: "img/5.3giaobai_chuongtrinh.png", caption: "Ở màn hình thiết lập lịch giao bài: chọn Lớp nhận bài, chọn bài học bắt đầu giao, chọn (các) ngày trong tuần lặp lại, Ngày bắt đầu, Giờ giao bài và Hạn nộp. Hệ thống hiển thị trước toàn bộ lịch giao từng bài để kiểm tra lại trước khi bấm “Lưu”." },
+          { img: "img/5.4giaobai_chuongtrinh.png", caption: "Sau khi lưu lịch giao bài tự động, vào lớp học tương ứng và mở tab “Điểm chi tiết” để theo dõi độ chính xác và tiến độ hoàn thành của từng học sinh theo thời gian." }
+        ]
+      },
+      {
+        title: "Giao bài riêng của trung tâm",
+        desc: "Ngoài kho bài có sẵn của FLYER, trung tâm còn có thể giao <strong>bài tập do chính trường/trung tâm tự biên soạn</strong> — phù hợp khi cần bám theo giáo trình nội bộ hoặc đề kiểm tra riêng. Xem video hướng dẫn chi tiết cách tạo và giao loại bài này bên dưới; ảnh minh hoạ từng bước sẽ được bổ sung sau.",
+        docs: [],
+        video: null,
+        videoPending: "Giao bài tập riêng của trường và trung tâm_FLYER Trợ giảng AI.mp4",
+        slides: [],
+        placeholder: "Ảnh minh hoạ từng bước cho phần này đang được chuẩn bị — trong lúc chờ, bạn có thể xem video hướng dẫn ở trên."
+      }
+    ]
+  },
+  {
+    id: "step-5", num: "5",
+    title: "Tạo thách đấu",
+    summary: "Cho học sinh thi đua trực tiếp với nhau qua một bài tập, thay vì chỉ giao bài thông thường.",
+    desc: "Bên cạnh giao bài tập thông thường, giáo viên có thể tạo <strong>Thách đấu (Challenge)</strong> từ một bài tập trong Khám Phá để học sinh thi đua trực tiếp với nhau. Xem video hướng dẫn chi tiết bên dưới; ảnh minh hoạ từng bước sẽ được bổ sung sau.",
+    docs: [],
+    video: "https://youtu.be/nybyogbZ0fA?si=xf6JLFyT3JY3z8fv",
+    slides: [],
+    placeholder: "Ảnh minh hoạ từng bước tạo Thách đấu đang được chuẩn bị — trong lúc chờ, bạn có thể xem video hướng dẫn ở trên."
+  },
+  {
+    id: "step-6", num: "6",
+    title: "Xem lịch sử & kết quả giao bài",
+    summary: "Theo dõi tất cả bài đã giao và xem chi tiết kết quả làm bài của từng học sinh.",
+    desc: "Vào mục <strong>Bài Tập Đã Giao</strong> ở menu trái để xem tổng số bài đã giao và số giờ học của cả trung tâm, cùng danh sách chi tiết từng bài (có thể lọc theo Tên lớp, Giáo viên, Trạng thái, Trình độ). Bấm vào biểu tượng 👁 ở cột <em>Thao tác</em> của bài cần kiểm tra để xem nhanh danh sách học sinh đã nhận bài; từ đó mở lịch sử các lần nộp bài của từng học sinh và xem chi tiết bài làm (câu đúng/sai, thời gian làm bài, điểm số), hoặc tải kết quả dưới dạng PDF.",
+    docs: [],
+    video: null,
+    slides: [
+      { img: "img/6.1lichsugiaobai.png", caption: "Mục Bài Tập Đã Giao hiển thị tổng số bài đã giao và số giờ học của trung tâm, kèm bảng danh sách từng bài đã giao — có thể lọc theo Tên lớp, Giáo viên, Trạng thái, Trình độ." },
+      { img: "img/6.2lichsugiaobai_xem.png", caption: "Trong bảng danh sách, bấm vào biểu tượng 👁 (xem) ở cột Thao tác của bài cần kiểm tra để xem chi tiết tiến độ và kết quả của từng học sinh đã nhận bài đó." },
+      { img: "img/6.3lichsugiaobai_xem_tunghocsinh00.png", caption: "Bấm vào biểu tượng tải/xem ở dòng của từng học sinh để mở “Danh sách bài đã nộp” — liệt kê tất cả các lần học sinh đã làm bài kèm điểm số và thời gian nộp." },
+      { img: "img/6.2lichsugiaobai_xem_tunghocsinh.png", caption: "Chi tiết kết quả kiểm tra của học sinh: tổng điểm, số câu trả lời đúng, thời gian làm bài và đáp án từng câu — có thể chia sẻ qua Facebook hoặc tải xuống PDF." }
+    ]
+  }
+];
+
+const container = document.getElementById('steps-container');
+const stepper = document.getElementById('stepper');
+const carouselRegistry = [];
+
+function chipsHtml(docs, video, videoPending) {
+  const docsHtml = (docs && docs.length)
+    ? docs.map(d => `<a class="chip doc" href="${d.url}" target="_blank" rel="noopener">📄 ${d.label}</a>`).join('')
+    : `<span class="chip doc disabled">📄 Tài liệu chi tiết (cập nhật sau)</span>`;
+
+  let videoHtml;
+  if (video) {
+    videoHtml = `<a class="chip video" href="${video}" target="_blank" rel="noopener">🎥 Video hướng dẫn</a>`;
+  } else if (videoPending) {
+    videoHtml = `<span class="chip video disabled" title="${videoPending}">🎥 Video hướng dẫn (sắp cập nhật)</span>`;
+  } else {
+    videoHtml = `<span class="chip video disabled">🎥 Video hướng dẫn (cập nhật sau)</span>`;
+  }
+  return docsHtml + videoHtml;
+}
+
+function mediaHtml(item) {
+  if (item.slides && item.slides.length) {
+    const idx = carouselRegistry.length;
+    carouselRegistry.push(item.slides);
+    return `
+      <div class="carousel" data-carousel-idx="${idx}">
+        <div class="slide-frame">
+          <button class="nav-btn prev" aria-label="Ảnh trước">‹</button>
+          <img alt="">
+          <span class="zoom-hint">🔍 Bấm để xem ảnh lớn</span>
+          <button class="nav-btn next" aria-label="Ảnh sau">›</button>
+        </div>
+        <div class="slide-meta">
+          <p class="caption"></p>
+          <span class="counter"></span>
+        </div>
+        <div class="dots"></div>
+      </div>`;
+  }
+  return `
+    <div class="placeholder-card">
+      <div class="icon">🚧</div>
+      ${item.placeholder || 'Ảnh minh hoạ cho bước này sẽ được cập nhật sớm.'}
+    </div>`;
+}
+
+STEPS.forEach((step, si) => {
+  // stepper node
+  const btn = document.createElement('button');
+  btn.className = 'step-node';
+  btn.dataset.target = step.id;
+  btn.innerHTML = `<span class="dot">${step.num}</span><span class="label">${step.title}</span>`;
+  btn.addEventListener('click', () => {
+    document.getElementById(step.id).scrollIntoView({behavior:'smooth', block:'start'});
+  });
+  stepper.appendChild(btn);
+
+  // section
+  const section = document.createElement('section');
+  section.className = 'step-section';
+  section.id = step.id;
+
+  let mainHtml;
+  if (step.parts && step.parts.length) {
+    mainHtml = step.parts.map((part, pi) => `
+      <div class="step-part">
+        <div class="step-part-head">
+          <span class="step-part-num">${pi + 1}</span>
+          <h3>${part.title}</h3>
+        </div>
+        <p class="part-desc">${part.desc}</p>
+        <div class="toolbar">${chipsHtml(part.docs, part.video, part.videoPending)}</div>
+        ${mediaHtml(part)}
+      </div>`).join('');
+  } else {
+    mainHtml = `
+      <div class="toolbar">${chipsHtml(step.docs, step.video, step.videoPending)}</div>
+      ${mediaHtml(step)}`;
+  }
+
+  const prevStep = STEPS[si - 1];
+  const nextStep = STEPS[si + 1];
+  const navHtml = `
+    <div class="step-nav">
+      ${prevStep
+        ? `<button class="step-nav-btn prev" data-target="${prevStep.id}">‹ <span class="step-nav-label">Bước ${prevStep.num}: ${prevStep.title}</span></button>`
+        : ''}
+      ${nextStep
+        ? `<button class="step-nav-btn next" data-target="${nextStep.id}"><span class="step-nav-label">Bước ${nextStep.num}: ${nextStep.title}</span> ›</button>`
+        : ''}
+    </div>`;
+
+  section.innerHTML = `
+    <div class="step-head">
+      <div class="step-badge">${step.num}</div>
+      <div>
+        <h2>${step.title}</h2>
+        <p class="summary">${step.summary}</p>
+      </div>
+    </div>
+    <p class="step-desc">${step.desc}</p>
+    ${mainHtml}
+    ${navHtml}
+  `;
+  container.appendChild(section);
+});
+
+container.addEventListener('click', e => {
+  const btn = e.target.closest('.step-nav-btn');
+  if (!btn) return;
+  const target = document.getElementById(btn.dataset.target);
+  if (target) target.scrollIntoView({behavior:'smooth', block:'start'});
+});
+
+// ---- lightbox: click any slide to view it near full resolution ----
+const lightbox = document.createElement('div');
+lightbox.className = 'lightbox';
+lightbox.innerHTML = `
+  <button class="lightbox-close" aria-label="Đóng">×</button>
+  <button class="lightbox-nav prev" aria-label="Ảnh trước">‹</button>
+  <img class="lightbox-img" alt="">
+  <button class="lightbox-nav next" aria-label="Ảnh sau">›</button>
+  <div class="lightbox-footer">
+    <p class="lightbox-caption"></p>
+    <span class="lightbox-counter"></span>
+  </div>`;
+document.body.appendChild(lightbox);
+
+const lbImg = lightbox.querySelector('.lightbox-img');
+const lbCaption = lightbox.querySelector('.lightbox-caption');
+const lbCounter = lightbox.querySelector('.lightbox-counter');
+const lbPrev = lightbox.querySelector('.lightbox-nav.prev');
+const lbNext = lightbox.querySelector('.lightbox-nav.next');
+const lbClose = lightbox.querySelector('.lightbox-close');
+
+let lbOpenCar = null;
+let lbController = null;
+
+function openLightbox(car, controller) {
+  lbOpenCar = car;
+  lbController = controller;
+  lightbox.classList.add('open');
+  document.body.classList.add('lightbox-open');
+  renderLightbox();
+}
+function renderLightbox() {
+  if (!lbController) return;
+  const { slides, getIdx } = lbController;
+  const i = getIdx();
+  lbImg.src = slides[i].img;
+  lbCaption.textContent = slides[i].caption;
+  lbCounter.textContent = `${i + 1} / ${slides.length}`;
+  lbPrev.disabled = i === 0;
+  lbNext.disabled = i === slides.length - 1;
+}
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.classList.remove('lightbox-open');
+  lbOpenCar = null;
+  lbController = null;
+}
+lbClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+lbPrev.addEventListener('click', () => lbController && lbController.goTo(lbController.getIdx() - 1));
+lbNext.addEventListener('click', () => lbController && lbController.goTo(lbController.getIdx() + 1));
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  else if (e.key === 'ArrowLeft') lbController.goTo(lbController.getIdx() - 1);
+  else if (e.key === 'ArrowRight') lbController.goTo(lbController.getIdx() + 1);
+});
+
+// ---- carousel logic (crossfade + slide, with preloading for a smooth feel) ----
+document.querySelectorAll('.carousel').forEach(car => {
+  const slides = carouselRegistry[+car.dataset.carouselIdx];
+  let idx = 0;
+  let animating = false;
+
+  const img = car.querySelector('img');
+  const caption = car.querySelector('.caption');
+  const counter = car.querySelector('.counter');
+  const prevBtn = car.querySelector('.nav-btn.prev');
+  const nextBtn = car.querySelector('.nav-btn.next');
+  const dotsWrap = car.querySelector('.dots');
+
+  // preload every slide of this step so switching never shows a blank frame
+  const cache = slides.map(s => {
+    const im = new Image();
+    im.src = s.img;
+    return im;
+  });
+
+  slides.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.setAttribute('aria-label', `Ảnh ${i + 1}`);
+    d.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(d);
+  });
+
+  function paint(i) {
+    idx = i;
+    const slide = slides[idx];
+    img.src = slide.img;
+    caption.textContent = slide.caption;
+    counter.textContent = `${idx + 1} / ${slides.length}`;
+    prevBtn.disabled = idx === 0;
+    nextBtn.disabled = idx === slides.length - 1;
+    [...dotsWrap.children].forEach((d, i2) => d.classList.toggle('active', i2 === idx));
+  }
+
+  function goTo(i) {
+    const next = Math.max(0, Math.min(slides.length - 1, i));
+    if (next === idx || animating) return;
+    const dir = next > idx ? 1 : -1;
+    animating = true;
+    img.style.willChange = 'opacity, transform';
+
+    img.style.transition = 'opacity .16s ease, transform .16s ease';
+    img.style.opacity = '0';
+    img.style.transform = `translateX(${dir * -14}px)`;
+
+    const swap = () => {
+      paint(next);
+      if (lbOpenCar === car) renderLightbox();
+      img.style.transition = 'none';
+      img.style.transform = `translateX(${dir * 14}px)`;
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          img.style.transition = 'opacity .26s cubic-bezier(.22,.61,.36,1), transform .26s cubic-bezier(.22,.61,.36,1)';
+          img.style.opacity = '1';
+          img.style.transform = 'translateX(0)';
+          setTimeout(() => {
+            // drop the compositing layer once settled so the resting frame renders at full sharpness
+            img.style.willChange = 'auto';
+            img.style.transform = '';
+          }, 280);
+          animating = false;
+        });
+      });
+    };
+    setTimeout(swap, 160);
+  }
+
+  const controller = { slides, getIdx: () => idx, goTo };
+  prevBtn.addEventListener('click', () => goTo(idx - 1));
+  nextBtn.addEventListener('click', () => goTo(idx + 1));
+  img.addEventListener('click', () => openLightbox(car, controller));
+
+  // swipe support for touch devices
+  let touchStartX = null;
+  const frame = car.querySelector('.slide-frame');
+  frame.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive: true});
+  frame.addEventListener('touchend', e => {
+    if (touchStartX === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 40) goTo(idx + (dx < 0 ? 1 : -1));
+    touchStartX = null;
+  }, {passive: true});
+
+  paint(0);
+});
+
+// ---- active step highlight on scroll ----
+const nodes = [...document.querySelectorAll('.step-node')];
+const sections = [...document.querySelectorAll('.step-section')];
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const id = e.target.id;
+      nodes.forEach(n => n.classList.toggle('active', n.dataset.target === id));
+    }
+  });
+}, {rootMargin: '-30% 0px -60% 0px'});
+sections.forEach(s => io.observe(s));
+</script>
+</body>
+</html>
