@@ -138,7 +138,7 @@
     <div class="step__toolbar">
       <a class="chip chip--doc" href="https://help.flyer.vn/danh-cho-giao-vien/quan-ly-tai-khoan-hoc-sinh/tao-tai-khoan-moi-cho-hoc-sinh" target="_blank" rel="noopener">📄 Tạo tài khoản mới cho học sinh</a>
       <a class="chip chip--doc" href="https://help.flyer.vn/danh-cho-giao-vien/quan-ly-tai-khoan-hoc-sinh/moi-hoc-sinh-tham-gia-truong-lop" target="_blank" rel="noopener">📄 Mời học sinh tham gia trường, lớp</a>
-      <a class="chip chip--video" href="https://drive.google.com/file/d/1QLKhgEHPH4wJ7RB4EpSZ7JVuoHIVliAx/view?usp=drive_link" target="_blank" rel="noopener">🎥 Video hướng dẫn</a>
+      <button type="button" class="chip chip--video" data-video-src="video/H%C6%B0%E1%BB%9Bng%20d%E1%BA%ABn%20t%E1%BA%A1o%20t%C3%A0i%20kho%E1%BA%A3n%20h%E1%BB%8Dc%20sinh_Full.mp4">🎥 Video hướng dẫn</button>
     </div>
 
     <div class="carousel" data-carousel>
@@ -401,16 +401,14 @@
 
     <div class="step__toolbar">
       <span class="chip chip--doc chip--disabled">📄 Tài liệu chi tiết (cập nhật sau)</span>
-      <button type="button" class="chip chip--video" data-video-src="https://www.youtube.com/watch?v=nybyogbZ0fA">🎥 Video hướng dẫn</button>
+      <button type="button" class="chip chip--video" data-video-src="video/5_Create%20challenge.mp4">🎥 Video hướng dẫn</button>
     </div>
 
     <div class="video-embed">
-      <div class="video-embed__yt-frame" data-youtube-src="https://www.youtube.com/watch?v=nybyogbZ0fA"></div>
-      <div class="video-embed__yt-fallback">
-        <img class="video-embed__yt-thumb" alt="">
-        <p class="video-embed__yt-text">Video này không phát trực tiếp được trong trang (YouTube chặn nhúng ở nơi này). Bấm nút bên dưới để xem trên YouTube.</p>
-        <a class="video-embed__yt-link" href="#" target="_blank" rel="noopener">▶ Xem video trên YouTube</a>
-      </div>
+      <video class="video-embed__player" controls preload="metadata">
+        <source src="video/5_Create%20challenge.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ phát video này.
+      </video>
     </div>
     <p class="video-embed__caption">Ảnh minh hoạ từng bước tạo Thách đấu đang được chuẩn bị — trong lúc chờ, bạn có thể xem video hướng dẫn ở trên.</p>
 
@@ -498,12 +496,6 @@
   <div class="video-modal__dialog">
     <button class="video-modal__close" type="button" aria-label="Đóng">×</button>
     <video class="video-modal__player" controls playsinline></video>
-    <div class="video-modal__yt" id="video-modal-yt"></div>
-    <div class="video-modal__yt-fallback">
-      <img class="video-modal__yt-thumb" alt="">
-      <p class="video-modal__yt-text">Video này không phát trực tiếp được trong trang (YouTube chặn nhúng ở nơi này). Bấm nút bên dưới để xem trên YouTube.</p>
-      <a class="video-modal__yt-link" href="#" target="_blank" rel="noopener">▶ Xem video trên YouTube</a>
-    </div>
   </div>
 </div>
 
@@ -632,80 +624,16 @@
   }, { rootMargin: '-30% 0px -60% 0px' });
   sections.forEach(function (s) { io.observe(s); });
 
-  // ---------- video modal: opens a local video or a YouTube link from any [data-video-src] trigger ----------
+  // ---------- video modal: opens a local video from any [data-video-src] trigger ----------
   var videoModalEl = document.getElementById('video-modal');
   var videoPlayer = videoModalEl.querySelector('.video-modal__player');
   var videoModalClose = videoModalEl.querySelector('.video-modal__close');
-  var ytContainer = videoModalEl.querySelector('.video-modal__yt');
-  var ytFallback = videoModalEl.querySelector('.video-modal__yt-fallback');
-  var ytFallbackThumb = ytFallback.querySelector('.video-modal__yt-thumb');
-  var ytFallbackLink = ytFallback.querySelector('.video-modal__yt-link');
-  var ytPlayer = null;
-  var ytApiPromise = null;
-
-  function extractYouTubeId(src) {
-    var m = src.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([\w-]{11})/);
-    return m ? m[1] : null;
-  }
-
-  function loadYouTubeApi() {
-    if (window.YT && window.YT.Player) return Promise.resolve(window.YT);
-    if (ytApiPromise) return ytApiPromise;
-    ytApiPromise = new Promise(function (resolve) {
-      var prevReady = window.onYouTubeIframeAPIReady;
-      window.onYouTubeIframeAPIReady = function () {
-        if (prevReady) prevReady();
-        resolve(window.YT);
-      };
-      var tag = document.createElement('script');
-      tag.src = 'https://www.youtube.com/iframe_api';
-      document.head.appendChild(tag);
-    });
-    return ytApiPromise;
-  }
-
-  function showYouTubeFallback(src, videoId) {
-    ytContainer.style.display = 'none';
-    ytFallbackThumb.src = 'https://img.youtube.com/vi/' + videoId + '/hqdefault.jpg';
-    ytFallbackLink.href = src;
-    ytFallback.style.display = 'flex';
-  }
-
-  function openYouTube(src) {
-    var videoId = extractYouTubeId(src);
-    videoPlayer.style.display = 'none';
-    ytFallback.style.display = 'none';
-    ytContainer.style.display = 'block';
-    loadYouTubeApi().then(function (YT) {
-      // the modal may have been closed (or a different video opened) before the API finished loading
-      if (!videoModalEl.classList.contains('is-open')) return;
-      if (ytPlayer) {
-        ytPlayer.loadVideoById(videoId);
-      } else {
-        ytPlayer = new YT.Player('video-modal-yt', {
-          videoId: videoId,
-          playerVars: { autoplay: 1, rel: 0 },
-          events: {
-            onError: function () { showYouTubeFallback(src, videoId); }
-          }
-        });
-      }
-    });
-  }
 
   function openVideoModal(src) {
-    var videoId = extractYouTubeId(src);
-    if (videoId) {
-      openYouTube(src);
-    } else {
-      ytContainer.style.display = 'none';
-      ytFallback.style.display = 'none';
-      videoPlayer.style.display = 'block';
-      videoPlayer.src = src;
-      videoPlayer.play().catch(function () {});
-    }
+    videoPlayer.src = src;
     videoModalEl.classList.add('is-open');
     document.body.classList.add('is-video-modal-open');
+    videoPlayer.play().catch(function () {});
   }
 
   function closeVideoModal() {
@@ -714,7 +642,6 @@
     videoPlayer.load();
     videoModalEl.classList.remove('is-open');
     document.body.classList.remove('is-video-modal-open');
-    if (ytPlayer) ytPlayer.stopVideo();
   }
 
   videoModalClose.addEventListener('click', closeVideoModal);
@@ -727,31 +654,6 @@
   document.querySelectorAll('[data-video-src]').forEach(function (trigger) {
     trigger.addEventListener('click', function () {
       openVideoModal(trigger.getAttribute('data-video-src'));
-    });
-  });
-
-  // ---------- inline YouTube embeds: fall back to a "watch on YouTube" card if embedding is blocked ----------
-  document.querySelectorAll('[data-youtube-src]').forEach(function (frame) {
-    var src = frame.getAttribute('data-youtube-src');
-    var videoId = extractYouTubeId(src);
-    if (!videoId) return;
-    var wrapper = frame.closest('.video-embed');
-    var fallback = wrapper ? wrapper.querySelector('.video-embed__yt-fallback') : null;
-
-    function showFallback() {
-      frame.style.display = 'none';
-      if (!fallback) return;
-      fallback.querySelector('.video-embed__yt-thumb').src = 'https://img.youtube.com/vi/' + videoId + '/hqdefault.jpg';
-      fallback.querySelector('.video-embed__yt-link').href = src;
-      fallback.style.display = 'flex';
-    }
-
-    loadYouTubeApi().then(function (YT) {
-      new YT.Player(frame, {
-        videoId: videoId,
-        playerVars: { rel: 0 },
-        events: { onError: showFallback }
-      });
     });
   });
 })();
