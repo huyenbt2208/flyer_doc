@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Triển khai FLYER cho Phụ huynh & Học sinh</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="hero">
+  <span class="hero__eyebrow">FLYER · TRIỂN KHAI CHO PHỤ HUYNH &amp; HỌC SINH</span>
+  <h1 class="hero__title">Giới thiệu Phòng Thi Ảo FLYER Exam</h1>
+  <p class="hero__text">Video tổng quan giới thiệu Phòng Thi Ảo (FLYER Exam) — dùng khi trung tâm cần giới thiệu nhanh sản phẩm tới đối tác, phụ huynh và học sinh.</p>
+</header>
+
+<div class="hero-video-wrap">
+  <video class="hero__video-player" controls preload="metadata">
+    <source src="video/Gio%CC%9B%CC%81i%20thie%CC%A3%CC%82u%20Pho%CC%80ng%20Thi%20A%CC%89o_B2B.mp4" type="video/mp4">
+    Trình duyệt của bạn không hỗ trợ phát video này.
+  </video>
+</div>
+
+<div class="stepper">
+  <nav class="stepper__nav" aria-label="Các bước hướng dẫn">
+    <a class="stepper__item is-active" href="#mo-dau"><span class="stepper__dot">0</span><span class="stepper__label">Mở đầu</span></a>
+    <a class="stepper__item" href="#trai-nghiem-flyer"><span class="stepper__dot">1</span><span class="stepper__label">Trải nghiệm FLYER</span></a>
+    <a class="stepper__item" href="#app-phu-huynh"><span class="stepper__dot">2</span><span class="stepper__label">App Phụ huynh</span></a>
+  </nav>
+</div>
+
+<main>
+
+  <section class="step" id="mo-dau">
+    <div class="step__head">
+      <div class="step__badge">0</div>
+      <div>
+        <h2 class="step__title">Mở đầu — Giới thiệu FLYER</h2>
+        <p class="step__summary">Nối tiếp Video 1: FLYER là nền tảng luyện tập đã đồng hành cùng hơn 100.000 học sinh.</p>
+      </div>
+    </div>
+    <p class="step__desc">FLYER: nền tảng đã tiếp lửa cho hơn 100.000 học sinh, truy cập qua website (link GV gửi) hoặc app FLYER. Sau khi nhận được đường link từ trung tâm, con sẽ bắt đầu hành trình luyện tập cùng FLYER.</p>
+
+    <div class="step__toolbar">
+      <span class="chip">👪 Đối tượng: Phụ huynh, học sinh</span>
+      <span class="chip">📍 Dùng ở: Cuối Training, gửi PH</span>
+      <span class="chip">⏱ Thời lượng video: 00:00 – 02:05</span>
+    </div>
+
+    <nav class="step__nav">
+      <a class="step__nav-link step__nav-link--next" href="#trai-nghiem-flyer"><span class="step__nav-label">Bước 1: Trải nghiệm FLYER</span> ›</a>
+    </nav>
+  </section>
+
+  <section class="step" id="trai-nghiem-flyer">
+    <div class="step__head">
+      <div class="step__badge">1</div>
+      <div>
+        <h2 class="step__title">Trải nghiệm học tập trên FLYER</h2>
+        <p class="step__summary">Hành trình của con trên ứng dụng FLYER — từ đăng nhập đến khám phá đầy đủ các tính năng luyện tập.</p>
+      </div>
+    </div>
+
+    <div class="part" id="dang-nhap-tai-khoan">
+      <div class="part__head">
+        <span class="part__num">1</span>
+        <h3 class="part__title">Đăng nhập bằng tài khoản thầy cô đưa</h3>
+      </div>
+      <p class="part__desc">Con dùng đúng tài khoản (số điện thoại/tên đăng nhập) và mật khẩu do giáo viên cấp để đăng nhập vào FLYER qua website hoặc app.</p>
+    </div>
+
+    <div class="part" id="nhiem-vu">
+      <div class="part__head">
+        <span class="part__num">2</span>
+        <h3 class="part__title">Nhận và làm bài tập ở phần Nhiệm vụ</h3>
+      </div>
+      <p class="part__desc">Mục Nhiệm vụ hiển thị các bài tập giáo viên đã giao — con hoàn thành từng nhiệm vụ để mở khoá phần thưởng.</p>
+    </div>
+
+    <div class="part" id="luyen-tap">
+      <div class="part__head">
+        <span class="part__num">3</span>
+        <h3 class="part__title">Luyện tập ở phần Luyện tập</h3>
+      </div>
+      <p class="part__desc">Mục Luyện tập cho phép con tự ôn luyện thêm theo chủ đề, kỹ năng, cấp độ ngoài các bài đã được giao.</p>
+    </div>
+
+    <div class="part" id="thach-dau">
+      <div class="part__head">
+        <span class="part__num">4</span>
+        <h3 class="part__title">Tham gia Thách đấu</h3>
+      </div>
+      <p class="part__desc">Con có thể thách đấu trực tiếp với bạn bè qua một bài tập để thi đua điểm số, tăng thêm hứng thú luyện tập.</p>
+    </div>
+
+    <div class="part" id="bingo">
+      <div class="part__head">
+        <span class="part__num">5</span>
+        <h3 class="part__title">Luyện tập cùng Bingo</h3>
+      </div>
+      <p class="part__desc">Bingo là trợ lý AI đồng hành cùng con luyện Speaking, Writing — chấm điểm và trò chuyện phản hồi ngay tại chỗ.</p>
+    </div>
+
+    <div class="part" id="study">
+      <div class="part__head">
+        <span class="part__num">6</span>
+        <h3 class="part__title">Luyện tập ở phần Study</h3>
+      </div>
+      <p class="part__desc">Mục Study tổng hợp lại từ vựng, ngữ pháp con còn sai để ôn luyện lại có trọng tâm.</p>
+    </div>
+
+    <div class="part" id="dao-de">
+      <div class="part__head">
+        <span class="part__num">7</span>
+        <h3 class="part__title">Luyện thi ở các Đảo đề</h3>
+      </div>
+      <p class="part__desc">Các Đảo đề mô phỏng đề thi thật theo từng chứng chỉ, giúp con làm quen cấu trúc và luyện thi sát với kỳ thi thật.</p>
+    </div>
+
+    <div class="part" id="tinh-nang-khac">
+      <div class="part__head">
+        <span class="part__num">8</span>
+        <h3 class="part__title">Giới thiệu thêm một số tính năng khác</h3>
+      </div>
+      <p class="part__desc">Ngoài các tính năng trên, FLYER còn có xếp hạng, huy hiệu, coin... để tạo thêm động lực luyện tập mỗi ngày cho con.</p>
+    </div>
+
+    <nav class="step__nav">
+      <a class="step__nav-link step__nav-link--prev" href="#mo-dau">‹ <span class="step__nav-label">Bước 0: Mở đầu</span></a>
+      <a class="step__nav-link step__nav-link--next" href="#app-phu-huynh"><span class="step__nav-label">Bước 2: App Phụ huynh</span> ›</a>
+    </nav>
+  </section>
+
+  <section class="step" id="app-phu-huynh">
+    <div class="step__head">
+      <div class="step__badge">2</div>
+      <div>
+        <h2 class="step__title">Theo dõi cùng App Phụ huynh</h2>
+        <p class="step__summary">Kết video — phụ huynh đồng hành theo dõi tiến bộ học tập của con.</p>
+      </div>
+    </div>
+    <p class="step__desc">Và phụ huynh có thể theo dõi từng bước tiến bộ của con ngay trên app Phụ huynh.</p>
+
+    <nav class="step__nav">
+      <a class="step__nav-link step__nav-link--prev" href="#trai-nghiem-flyer">‹ <span class="step__nav-label">Bước 1: Trải nghiệm FLYER</span></a>
+    </nav>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <a class="site-footer__link" href="../index.html">‹ Quay lại Hướng dẫn Setup Trung Tâm</a>
+  <span>Tài liệu nội bộ · Flyer SWAT</span>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var stepperItems = Array.prototype.slice.call(document.querySelectorAll('.stepper__item'));
+  var sections = Array.prototype.slice.call(document.querySelectorAll('.step'));
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var id = entry.target.id;
+        stepperItems.forEach(function (item) {
+          item.classList.toggle('is-active', item.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(function (s) { io.observe(s); });
+})();
+</script>
+
+</body>
+</html>
