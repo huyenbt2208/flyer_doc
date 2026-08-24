@@ -14,7 +14,7 @@
   <p class="hero__text">Video tổng quan giới thiệu Phòng Thi Ảo (FLYER Exam) — dùng khi trung tâm cần giới thiệu nhanh sản phẩm tới đối tác, phụ huynh và học sinh.</p>
 </header>
 
-<div class="hero-video-wrap">
+<div class="hero-video-wrap" id="gioi-thieu">
   <video class="hero__video-player" controls preload="metadata">
     <source src="video/Gio%CC%9B%CC%81i%20thie%CC%A3%CC%82u%20Pho%CC%80ng%20Thi%20A%CC%89o_B2B.mp4" type="video/mp4">
     Trình duyệt của bạn không hỗ trợ phát video này.
@@ -23,34 +23,45 @@
 
 <div class="stepper">
   <nav class="stepper__nav" aria-label="Các bước hướng dẫn">
-    <a class="stepper__item is-active" href="#mo-dau"><span class="stepper__dot">0</span><span class="stepper__label">Mở đầu</span></a>
+    <a class="stepper__item is-active" href="#gioi-thieu"><span class="stepper__dot">0</span><span class="stepper__label">Giới thiệu</span></a>
     <a class="stepper__item" href="#trai-nghiem-flyer"><span class="stepper__dot">1</span><span class="stepper__label">Trải nghiệm FLYER</span></a>
     <a class="stepper__item" href="#app-phu-huynh"><span class="stepper__dot">2</span><span class="stepper__label">App Phụ huynh</span></a>
   </nav>
+
+  <div class="toc">
+    <h2 class="toc__title">Sơ đồ các bước — bấm để đi thẳng tới từng bước</h2>
+
+    <div class="diagram">
+      <a class="diagram__node" href="#gioi-thieu">
+        <span class="diagram__num">0</span>
+        <span class="diagram__label">Giới thiệu chung</span>
+      </a>
+      <span class="diagram__connector" aria-hidden="true"></span>
+
+      <div class="diagram__group">
+        <span class="diagram__group-label">1. Trải nghiệm học tập trên FLYER</span>
+        <div class="diagram__grid">
+          <a class="diagram__card" href="#dang-nhap-tai-khoan"><span class="diagram__card-num">1.1</span><span class="diagram__card-label">Đăng nhập</span></a>
+          <a class="diagram__card" href="#nhiem-vu"><span class="diagram__card-num">1.2</span><span class="diagram__card-label">Nhiệm vụ</span></a>
+          <a class="diagram__card" href="#luyen-tap"><span class="diagram__card-num">1.3</span><span class="diagram__card-label">Luyện tập</span></a>
+          <a class="diagram__card" href="#thach-dau"><span class="diagram__card-num">1.4</span><span class="diagram__card-label">Thách đấu</span></a>
+          <a class="diagram__card" href="#bingo"><span class="diagram__card-num">1.5</span><span class="diagram__card-label">Bingo</span></a>
+          <a class="diagram__card" href="#study"><span class="diagram__card-num">1.6</span><span class="diagram__card-label">Level, Speaking, Writing</span></a>
+          <a class="diagram__card" href="#dao-de"><span class="diagram__card-num">1.7</span><span class="diagram__card-label">Đảo đề</span></a>
+          <a class="diagram__card" href="#tinh-nang-khac"><span class="diagram__card-num">1.8</span><span class="diagram__card-label">Tính năng khác</span></a>
+        </div>
+      </div>
+
+      <span class="diagram__connector" aria-hidden="true"></span>
+      <a class="diagram__node" href="#app-phu-huynh">
+        <span class="diagram__num">2</span>
+        <span class="diagram__label">App Phụ huynh</span>
+      </a>
+    </div>
+  </div>
 </div>
 
 <main>
-
-  <section class="step" id="mo-dau">
-    <div class="step__head">
-      <div class="step__badge">0</div>
-      <div>
-        <h2 class="step__title">Mở đầu — Giới thiệu FLYER</h2>
-        <p class="step__summary">Nối tiếp Video 1: FLYER là nền tảng luyện tập đã đồng hành cùng hơn 100.000 học sinh.</p>
-      </div>
-    </div>
-    <p class="step__desc">FLYER: nền tảng đã tiếp lửa cho hơn 100.000 học sinh, truy cập qua website (link GV gửi) hoặc app FLYER. Sau khi nhận được đường link từ trung tâm, con sẽ bắt đầu hành trình luyện tập cùng FLYER.</p>
-
-    <div class="step__toolbar">
-      <span class="chip">👪 Đối tượng: Phụ huynh, học sinh</span>
-      <span class="chip">📍 Dùng ở: Cuối Training, gửi PH</span>
-      <span class="chip">⏱ Thời lượng video: 00:00 – 02:05</span>
-    </div>
-
-    <nav class="step__nav">
-      <a class="step__nav-link step__nav-link--next" href="#trai-nghiem-flyer"><span class="step__nav-label">Bước 1: Trải nghiệm FLYER</span> ›</a>
-    </nav>
-  </section>
 
   <section class="step" id="trai-nghiem-flyer">
     <div class="step__head">
@@ -66,7 +77,39 @@
         <span class="part__num">1</span>
         <h3 class="part__title">Đăng nhập bằng tài khoản thầy cô đưa</h3>
       </div>
-      <p class="part__desc">Con dùng đúng tài khoản (số điện thoại/tên đăng nhập) và mật khẩu do giáo viên cấp để đăng nhập vào FLYER qua website hoặc app.</p>
+      <p class="part__desc">Con dùng đúng tài khoản (số điện thoại/tên đăng nhập) và mật khẩu do giáo viên cấp để đăng nhập vào FLYER qua domain của trung tâm (ví dụ: <strong>https://domain.flyer.us/</strong> — trung tâm gửi link cụ thể).</p>
+
+      <div class="step__toolbar">
+        <span class="chip chip--doc chip--disabled">📄 Tài liệu chi tiết (cập nhật sau)</span>
+        <span class="chip chip--video chip--disabled">🎥 Video hướng dẫn (cập nhật sau)</span>
+      </div>
+
+      <div class="carousel" data-carousel>
+        <div class="carousel__frame">
+          <button class="carousel__nav carousel__nav--prev" type="button" aria-label="Ảnh trước"></button>
+          <div class="carousel__slides">
+            <figure class="carousel__slide is-active">
+              <img class="carousel__img" src="img/1.login.png" alt="Ở màn hình chính FLYER, bấm nút “ĐĂNG NHẬP” ở góc trên để mở màn hình đăng nhập.">
+            </figure>
+            <figure class="carousel__slide">
+              <img class="carousel__img" src="img/1.1login_account.png" alt="Nhập đúng Số điện thoại/Tên đăng nhập và Mật khẩu do trung tâm cấp, sau đó bấm “ĐĂNG NHẬP” để vào hệ thống.">
+            </figure>
+          </div>
+          <span class="carousel__zoom-hint">🔍 Bấm để xem ảnh lớn</span>
+          <button class="carousel__nav carousel__nav--next" type="button" aria-label="Ảnh sau"></button>
+        </div>
+        <div class="carousel__captions">
+          <p class="carousel__caption is-active">Ở màn hình chính FLYER, bấm nút “ĐĂNG NHẬP” ở góc trên để mở màn hình đăng nhập.</p>
+          <p class="carousel__caption">Nhập đúng Số điện thoại/Tên đăng nhập và Mật khẩu do trung tâm cấp, sau đó bấm “ĐĂNG NHẬP” để vào hệ thống.</p>
+        </div>
+        <div class="carousel__footer">
+          <span class="carousel__counter">1 / 2</span>
+        </div>
+        <div class="carousel__dots">
+          <button class="carousel__dot is-active" type="button" aria-label="Ảnh 1"></button>
+          <button class="carousel__dot" type="button" aria-label="Ảnh 2"></button>
+        </div>
+      </div>
     </div>
 
     <div class="part" id="nhiem-vu">
@@ -75,6 +118,21 @@
         <h3 class="part__title">Nhận và làm bài tập ở phần Nhiệm vụ</h3>
       </div>
       <p class="part__desc">Mục Nhiệm vụ hiển thị các bài tập giáo viên đã giao — con hoàn thành từng nhiệm vụ để mở khoá phần thưởng.</p>
+
+      <ol class="mini-steps">
+        <li><span class="mini-steps__num">1</span><span>Truy cập mục <strong>Nhiệm vụ</strong> tại trang chủ.</span></li>
+        <li><span class="mini-steps__num">2</span><span>Nhấn vào một bài tập trong danh sách <strong>Nhiệm vụ được giao</strong>. Hãy chú ý hoàn thành bài tập trước hạn nộp.</span></li>
+        <li><span class="mini-steps__num">3</span><span>Nhấn nút <strong>Bắt đầu</strong> để làm bài. Sau khi hoàn thành, hệ thống sẽ trả kết quả tức thì kèm theo giải thích đáp án chi tiết.</span></li>
+      </ol>
+
+      <div class="step__toolbar">
+        <span class="chip chip--doc chip--disabled">📄 Tài liệu chi tiết (cập nhật sau)</span>
+        <span class="chip chip--video chip--disabled">🎥 Video hướng dẫn (cập nhật sau)</span>
+      </div>
+
+      <div class="canva-embed">
+        <iframe src="https://iframely.net/o7UInUp9" allowfullscreen="" allow="fullscreen *;"></iframe>
+      </div>
     </div>
 
     <div class="part" id="luyen-tap">
@@ -83,6 +141,33 @@
         <h3 class="part__title">Luyện tập ở phần Luyện tập</h3>
       </div>
       <p class="part__desc">Mục Luyện tập cho phép con tự ôn luyện thêm theo chủ đề, kỹ năng, cấp độ ngoài các bài đã được giao.</p>
+
+      <div class="step__toolbar">
+        <span class="chip chip--doc chip--disabled">📄 Tài liệu chi tiết (cập nhật sau)</span>
+        <span class="chip chip--video chip--disabled">🎥 Video hướng dẫn (cập nhật sau)</span>
+      </div>
+
+      <div class="carousel" data-carousel>
+        <div class="carousel__frame">
+          <button class="carousel__nav carousel__nav--prev" type="button" aria-label="Ảnh trước"></button>
+          <div class="carousel__slides">
+            <figure class="carousel__slide is-active">
+              <img class="carousel__img" src="img/3luyentap.png" alt="Trang Luyện tập chia thành 3 tab: Thử thách nhỏ, Trắc nghiệm, Cộng đồng. Bài tập được xếp theo cấp độ (Pre A1 → C2) — dùng bộ lọc bên trái (Cấp độ, Chứng chỉ, Kỹ năng, Dạng câu hỏi...) để tìm đúng bài cần luyện.">
+            </figure>
+          </div>
+          <span class="carousel__zoom-hint">🔍 Bấm để xem ảnh lớn</span>
+          <button class="carousel__nav carousel__nav--next" type="button" aria-label="Ảnh sau"></button>
+        </div>
+        <div class="carousel__captions">
+          <p class="carousel__caption is-active">Trang Luyện tập chia thành 3 tab: Thử thách nhỏ, Trắc nghiệm, Cộng đồng. Bài tập được xếp theo cấp độ (Pre A1 → C2) — dùng bộ lọc bên trái (Cấp độ, Chứng chỉ, Kỹ năng, Dạng câu hỏi...) để tìm đúng bài cần luyện.</p>
+        </div>
+        <div class="carousel__footer">
+          <span class="carousel__counter">1 / 1</span>
+        </div>
+        <div class="carousel__dots">
+          <button class="carousel__dot is-active" type="button" aria-label="Ảnh 1"></button>
+        </div>
+      </div>
     </div>
 
     <div class="part" id="thach-dau">
@@ -91,6 +176,19 @@
         <h3 class="part__title">Tham gia Thách đấu</h3>
       </div>
       <p class="part__desc">Con có thể thách đấu trực tiếp với bạn bè qua một bài tập để thi đua điểm số, tăng thêm hứng thú luyện tập.</p>
+
+      <div class="step__toolbar">
+        <a href="https://help.flyer.vn/danh-cho-hoc-sinh/thach-dau" target="_blank" class="chip chip--doc" >📄 Tài liệu chi tiết</a>
+        <button type="button" class="chip chip--video" data-video-src="video/S%E1%BA%A3nh%20th%C3%A1ch%20%C4%91%E1%BA%A5u.mp4">🎥 Video hướng dẫn</button>
+      </div>
+
+      <div class="video-embed">
+        <video class="video-embed__player" controls preload="metadata">
+          <source src="video/S%E1%BA%A3nh%20th%C3%A1ch%20%C4%91%E1%BA%A5u.mp4" type="video/mp4">
+          Trình duyệt của bạn không hỗ trợ phát video này.
+        </video>
+      </div>
+      <p class="video-embed__caption">Video giới thiệu Sảnh thách đấu — nơi con thách đấu trực tiếp với bạn bè qua một bài tập để thi đua điểm số.</p>
     </div>
 
     <div class="part" id="bingo">
@@ -99,14 +197,86 @@
         <h3 class="part__title">Luyện tập cùng Bingo</h3>
       </div>
       <p class="part__desc">Bingo là trợ lý AI đồng hành cùng con luyện Speaking, Writing — chấm điểm và trò chuyện phản hồi ngay tại chỗ.</p>
+
+      <div class="step__toolbar">
+        <a href="https://help.flyer.vn/danh-cho-hoc-sinh/tro-chuyen-voi-bingo-ai" target="_blank" class="chip chip--doc" >📄 Tài liệu chi tiết</a>
+        <button type="button" class="chip chip--video" data-video-src="video/app_bingo_ai.mp4">🎥 Video hướng dẫn</button>
+      </div>
+
+      <div class="video-embed">
+        <video class="video-embed__player" controls preload="metadata">
+          <source src="video/app_bingo_ai.mp4" type="video/mp4">
+          Trình duyệt của bạn không hỗ trợ phát video này.
+        </video>
+      </div>
+      <p class="video-embed__caption">Video giới thiệu app Bingo AI — trợ lý AI đồng hành cùng con luyện Speaking, Writing.</p>
     </div>
 
     <div class="part" id="study">
       <div class="part__head">
         <span class="part__num">6</span>
-        <h3 class="part__title">Luyện tập ở phần Study</h3>
+        <h3 class="part__title">Luyện tập theo các level, luyện Speaking, luyện Writing</h3>
       </div>
-      <p class="part__desc">Mục Study tổng hợp lại từ vựng, ngữ pháp con còn sai để ôn luyện lại có trọng tâm.</p>
+      <p class="part__desc">Mục Study tổng hợp lại từ vựng, ngữ pháp con còn sai để ôn luyện lại có trọng tâm, đồng thời là nơi con luyện chuyên sâu 2 kỹ năng Speaking và Writing cùng Bingo.</p>
+
+      <div class="subpart" id="luyen-tap-o-study">
+        <div class="subpart__head">
+          <span class="subpart__num">6.1</span>
+          <h4 class="subpart__title">Luyện tập ở Study</h4>
+        </div>
+        <p class="subpart__desc">Study chia lộ trình ôn tập thành từng chặng theo level — con hoàn thành lần lượt từng chặng để mở khoá chặng tiếp theo, hệ thống tự theo dõi tiến độ học (số buổi đã hoàn thành/tổng số buổi của chương trình).</p>
+
+        <div class="step__toolbar">
+          <span class="chip chip--doc chip--disabled">📄 Tài liệu chi tiết (cập nhật sau)</span>
+          <span class="chip chip--video chip--disabled">🎥 Video hướng dẫn (cập nhật sau)</span>
+        </div>
+
+        <div class="carousel" data-carousel>
+          <div class="carousel__frame">
+            <button class="carousel__nav carousel__nav--prev" type="button" aria-label="Ảnh trước"></button>
+            <div class="carousel__slides">
+              <figure class="carousel__slide is-active">
+                <img class="carousel__img" src="img/4.study.png" alt="Trang Study hiển thị lộ trình học theo chương trình đã chọn (ví dụ Candy World Pre A1), chia thành các chặng đánh số — chặng có dấu ✓ là đã hoàn thành. Bên trái hiển thị tiến độ học (số buổi đã hoàn thành/tổng số buổi).">
+              </figure>
+            </div>
+            <span class="carousel__zoom-hint">🔍 Bấm để xem ảnh lớn</span>
+            <button class="carousel__nav carousel__nav--next" type="button" aria-label="Ảnh sau"></button>
+          </div>
+          <div class="carousel__captions">
+            <p class="carousel__caption is-active">Trang Study hiển thị lộ trình học theo chương trình đã chọn (ví dụ Candy World Pre A1), chia thành các chặng đánh số — chặng có dấu ✓ là đã hoàn thành. Bên trái hiển thị tiến độ học (số buổi đã hoàn thành/tổng số buổi).</p>
+          </div>
+          <div class="carousel__footer">
+            <span class="carousel__counter">1 / 1</span>
+          </div>
+          <div class="carousel__dots">
+            <button class="carousel__dot is-active" type="button" aria-label="Ảnh 1"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="subpart" id="on-luyen-ky-nang-speaking">
+        <div class="subpart__head">
+          <span class="subpart__num">6.2</span>
+          <h4 class="subpart__title">Ôn luyện kỹ năng Speaking</h4>
+        </div>
+        <p class="subpart__desc">Con luyện nói cùng Bingo — trợ lý AI chấm điểm phát âm và phản hồi ngay tại chỗ để con cải thiện qua từng lượt luyện tập.</p>
+
+        <div class="canva-embed">
+          <iframe src="https://iframely.net/uq7LhhzF" allowfullscreen="" allow="fullscreen *;"></iframe>
+        </div>
+      </div>
+
+      <div class="subpart" id="on-luyen-ky-nang-writing">
+        <div class="subpart__head">
+          <span class="subpart__num">6.3</span>
+          <h4 class="subpart__title">Ôn luyện kỹ năng Writing</h4>
+        </div>
+        <p class="subpart__desc">Con luyện viết cùng Bingo — bài viết được chấm điểm và nhận xét chi tiết theo từng tiêu chí để con biết chính xác cần cải thiện ở đâu.</p>
+
+        <div class="canva-embed">
+          <iframe src="https://iframely.net/N8uzQgv1" allowfullscreen="" allow="fullscreen *;"></iframe>
+        </div>
+      </div>
     </div>
 
     <div class="part" id="dao-de">
@@ -115,6 +285,62 @@
         <h3 class="part__title">Luyện thi ở các Đảo đề</h3>
       </div>
       <p class="part__desc">Các Đảo đề mô phỏng đề thi thật theo từng chứng chỉ, giúp con làm quen cấu trúc và luyện thi sát với kỳ thi thật.</p>
+
+      <div class="subpart" id="dao-de-theo-cap-do">
+        <div class="subpart__head">
+          <span class="subpart__num">7.1</span>
+          <h4 class="subpart__title">Luyện tập các đề thi theo cấp độ</h4>
+        </div>
+        <p class="subpart__desc">Con chọn hành tinh/đảo đề tương ứng với cấp độ của mình — Starters, Movers, Flyers, TOEFL Primary... — để luyện đề bám sát đúng chứng chỉ đang theo học.</p>
+
+        <div class="step__toolbar">
+          <span class="chip chip--doc chip--disabled">📄 Tài liệu chi tiết (cập nhật sau)</span>
+          <span class="chip chip--video chip--disabled">🎥 Video hướng dẫn (cập nhật sau)</span>
+        </div>
+
+        <div class="carousel" data-carousel>
+          <div class="carousel__frame">
+            <button class="carousel__nav carousel__nav--prev" type="button" aria-label="Ảnh trước"></button>
+            <div class="carousel__slides">
+              <figure class="carousel__slide is-active">
+                <img class="carousel__img" src="img/7.1daode.png" alt="Màn hình chọn Đảo đề: mỗi hành tinh tương ứng với một cấp độ/chứng chỉ (Starters, Movers, TOEFL Primary...) — vuốt trái/phải để chọn đúng hành tinh phù hợp với cấp độ của con.">
+              </figure>
+            </div>
+            <span class="carousel__zoom-hint">🔍 Bấm để xem ảnh lớn</span>
+            <button class="carousel__nav carousel__nav--next" type="button" aria-label="Ảnh sau"></button>
+          </div>
+          <div class="carousel__captions">
+            <p class="carousel__caption is-active">Màn hình chọn Đảo đề: mỗi hành tinh tương ứng với một cấp độ/chứng chỉ (Starters, Movers, TOEFL Primary...) — vuốt trái/phải để chọn đúng hành tinh phù hợp với cấp độ của con.</p>
+          </div>
+          <div class="carousel__footer">
+            <span class="carousel__counter">1 / 1</span>
+          </div>
+          <div class="carousel__dots">
+            <button class="carousel__dot is-active" type="button" aria-label="Ảnh 1"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="subpart" id="global-journey">
+        <div class="subpart__head">
+          <span class="subpart__num">7.2</span>
+          <h4 class="subpart__title">Luyện tập theo Global Journey</h4>
+        </div>
+        <p class="subpart__desc">Global Journey là lộ trình luyện đề xuyên suốt nhiều chủ đề — con lần lượt hoàn thành từng chặng để khám phá hành trình.</p>
+
+        <div class="step__toolbar">
+          <span class="chip chip--doc chip--disabled">📄 Tài liệu chi tiết (cập nhật sau)</span>
+          <button type="button" class="chip chip--video" data-video-src="video/Global_Journey.mp4">🎥 Video hướng dẫn</button>
+        </div>
+
+        <div class="video-embed">
+          <video class="video-embed__player" controls preload="metadata">
+            <source src="video/Global_Journey.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ phát video này.
+          </video>
+        </div>
+        <p class="video-embed__caption">Video hướng dẫn luyện tập theo Global Journey.</p>
+      </div>
     </div>
 
     <div class="part" id="tinh-nang-khac">
@@ -123,10 +349,94 @@
         <h3 class="part__title">Giới thiệu thêm một số tính năng khác</h3>
       </div>
       <p class="part__desc">Ngoài các tính năng trên, FLYER còn có xếp hạng, huy hiệu, coin... để tạo thêm động lực luyện tập mỗi ngày cho con.</p>
+
+      <div class="subpart" id="tra-cuu-tu-vung">
+        <div class="subpart__head">
+          <span class="subpart__num">8.1</span>
+          <h4 class="subpart__title">Tra cứu từ vựng</h4>
+        </div>
+        <p class="subpart__desc">Con có thể tra cứu nhanh nghĩa, phát âm của từ vựng ngay trong lúc học mà không cần thoát ra ứng dụng khác.</p>
+
+        <div class="step__toolbar">
+          <span class="chip chip--doc chip--disabled">📄 Tài liệu chi tiết (cập nhật sau)</span>
+          <button type="button" class="chip chip--video" data-video-src="video/tuvung.mp4">🎥 Video hướng dẫn</button>
+        </div>
+
+        <div class="video-embed">
+          <video class="video-embed__player" controls preload="metadata">
+            <source src="video/tuvung.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ phát video này.
+          </video>
+        </div>
+        <p class="video-embed__caption">Video hướng dẫn tra cứu từ vựng ngay trong lúc học.</p>
+      </div>
+
+      <div class="subpart" id="xem-dap-an-lich-su">
+        <div class="subpart__head">
+          <span class="subpart__num">8.2</span>
+          <h4 class="subpart__title">Xem đáp án và lịch sử làm bài</h4>
+        </div>
+        <p class="subpart__desc">Sau khi nộp bài, con xem điểm và đáp án ngay lập tức; muốn xem lại các bài đã làm trước đó thì vào mục Lịch sử làm bài ở trang chủ.</p>
+
+        <ol class="mini-steps">
+          <li><span class="mini-steps__num">1</span><span>Ngay sau khi nộp bài, màn hình kết quả hiện điểm số — bấm <strong>Xem đáp án</strong> để xem đáp án của bài vừa làm.</span></li>
+          <li><span class="mini-steps__num">2</span><span>Muốn xem lại các bài đã làm trước đó, quay về trang chủ và bấm biểu tượng <strong>REPORT</strong> (góc trên).</span></li>
+          <li><span class="mini-steps__num">3</span><span>Trang <strong>Lịch sử làm bài</strong> liệt kê tất cả bài đã nộp — có thể lọc theo Cấp độ, Kỹ năng, Tên bài kiểm tra, hoặc tải kết quả về máy.</span></li>
+          <li><span class="mini-steps__num">4</span><span>Bấm vào một bài trong danh sách để mở lại màn hình kết quả của bài đó.</span></li>
+          <li><span class="mini-steps__num">5</span><span>Bấm <strong>Xem đáp án</strong> để xem chi tiết từng câu đúng/sai của bài đã làm.</span></li>
+        </ol>
+
+        <div class="step__toolbar">
+          <span class="chip chip--doc chip--disabled">📄 Tài liệu chi tiết (cập nhật sau)</span>
+          <span class="chip chip--video chip--disabled">🎥 Video hướng dẫn (cập nhật sau)</span>
+        </div>
+
+        <div class="carousel" data-carousel>
+          <div class="carousel__frame">
+            <button class="carousel__nav carousel__nav--prev" type="button" aria-label="Ảnh trước"></button>
+            <div class="carousel__slides">
+              <figure class="carousel__slide is-active">
+                <img class="carousel__img" src="img/6.21lichsu.avif" alt="Ngay sau khi nộp bài, màn hình kết quả hiện điểm số — bấm “Xem đáp án” để xem đáp án của bài vừa làm.">
+              </figure>
+              <figure class="carousel__slide">
+                <img class="carousel__img" src="img/6.22lichsu.avif" alt="Muốn xem lại các bài đã làm trước đó, quay về trang chủ và bấm biểu tượng “REPORT” ở góc trên.">
+              </figure>
+              <figure class="carousel__slide">
+                <img class="carousel__img" src="img/6.23lichsu.avif" alt="Trang Lịch sử làm bài liệt kê tất cả bài đã nộp — có thể lọc theo Cấp độ, Kỹ năng, Tên bài kiểm tra, hoặc tải kết quả về máy.">
+              </figure>
+              <figure class="carousel__slide">
+                <img class="carousel__img" src="img/6.24lichsu.avif" alt="Bấm vào một bài trong danh sách để mở lại màn hình kết quả của bài đó, kèm nút “Xem đáp án”.">
+              </figure>
+              <figure class="carousel__slide">
+                <img class="carousel__img" src="img/6.25lichsu.avif" alt="Màn hình xem đáp án hiển thị chi tiết từng câu — đánh dấu đúng/sai để con biết chính xác cần cải thiện ở đâu.">
+              </figure>
+            </div>
+            <span class="carousel__zoom-hint">🔍 Bấm để xem ảnh lớn</span>
+            <button class="carousel__nav carousel__nav--next" type="button" aria-label="Ảnh sau"></button>
+          </div>
+          <div class="carousel__captions">
+            <p class="carousel__caption is-active">Ngay sau khi nộp bài, màn hình kết quả hiện điểm số — bấm “Xem đáp án” để xem đáp án của bài vừa làm.</p>
+            <p class="carousel__caption">Muốn xem lại các bài đã làm trước đó, quay về trang chủ và bấm biểu tượng “REPORT” ở góc trên.</p>
+            <p class="carousel__caption">Trang Lịch sử làm bài liệt kê tất cả bài đã nộp — có thể lọc theo Cấp độ, Kỹ năng, Tên bài kiểm tra, hoặc tải kết quả về máy.</p>
+            <p class="carousel__caption">Bấm vào một bài trong danh sách để mở lại màn hình kết quả của bài đó, kèm nút “Xem đáp án”.</p>
+            <p class="carousel__caption">Màn hình xem đáp án hiển thị chi tiết từng câu — đánh dấu đúng/sai để con biết chính xác cần cải thiện ở đâu.</p>
+          </div>
+          <div class="carousel__footer">
+            <span class="carousel__counter">1 / 5</span>
+          </div>
+          <div class="carousel__dots">
+            <button class="carousel__dot is-active" type="button" aria-label="Ảnh 1"></button>
+            <button class="carousel__dot" type="button" aria-label="Ảnh 2"></button>
+            <button class="carousel__dot" type="button" aria-label="Ảnh 3"></button>
+            <button class="carousel__dot" type="button" aria-label="Ảnh 4"></button>
+            <button class="carousel__dot" type="button" aria-label="Ảnh 5"></button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <nav class="step__nav">
-      <a class="step__nav-link step__nav-link--prev" href="#mo-dau">‹ <span class="step__nav-label">Bước 0: Mở đầu</span></a>
+      <a class="step__nav-link step__nav-link--prev" href="#gioi-thieu">‹ <span class="step__nav-label">Giới thiệu chung</span></a>
       <a class="step__nav-link step__nav-link--next" href="#app-phu-huynh"><span class="step__nav-label">Bước 2: App Phụ huynh</span> ›</a>
     </nav>
   </section>
@@ -141,6 +451,19 @@
     </div>
     <p class="step__desc">Và phụ huynh có thể theo dõi từng bước tiến bộ của con ngay trên app Phụ huynh.</p>
 
+    <div class="step__toolbar">
+      <span class="chip chip--doc chip--disabled">📄 Tài liệu chi tiết (cập nhật sau)</span>
+      <button type="button" class="chip chip--video" data-video-src="video/phuhuynh.mp4">🎥 Video hướng dẫn</button>
+    </div>
+
+    <div class="video-embed">
+      <video class="video-embed__player" controls preload="metadata">
+        <source src="video/phuhuynh.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ phát video này.
+      </video>
+    </div>
+    <p class="video-embed__caption">Video giới thiệu app Phụ huynh — theo dõi tiến bộ học tập của con.</p>
+
     <nav class="step__nav">
       <a class="step__nav-link step__nav-link--prev" href="#trai-nghiem-flyer">‹ <span class="step__nav-label">Bước 1: Trải nghiệm FLYER</span></a>
     </nav>
@@ -153,9 +476,135 @@
   <span>Tài liệu nội bộ · Flyer SWAT</span>
 </footer>
 
+<div class="lightbox" id="lightbox">
+  <button class="lightbox__close" type="button" aria-label="Đóng">×</button>
+  <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Ảnh trước"></button>
+  <img class="lightbox__img" alt="">
+  <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Ảnh sau"></button>
+  <div class="lightbox__footer">
+    <p class="lightbox__caption"></p>
+    <span class="lightbox__counter"></span>
+  </div>
+</div>
+
+<div class="video-modal" id="video-modal">
+  <div class="video-modal__dialog">
+    <button class="video-modal__close" type="button" aria-label="Đóng">×</button>
+    <video class="video-modal__player" controls playsinline></video>
+  </div>
+</div>
+
 <script>
 (function () {
   "use strict";
+
+  // ---------- lightbox: shows the active slide of whichever carousel opened it ----------
+  var lightboxEl = document.getElementById('lightbox');
+  var lbImg = lightboxEl.querySelector('.lightbox__img');
+  var lbCaption = lightboxEl.querySelector('.lightbox__caption');
+  var lbCounter = lightboxEl.querySelector('.lightbox__counter');
+  var lbPrev = lightboxEl.querySelector('.lightbox__nav--prev');
+  var lbNext = lightboxEl.querySelector('.lightbox__nav--next');
+  var lbClose = lightboxEl.querySelector('.lightbox__close');
+  var activeCarousel = null;
+
+  function syncLightbox() {
+    if (!activeCarousel) return;
+    var api = activeCarousel._carouselApi;
+    var i = api.getIndex();
+    var img = api.slides[i].querySelector('.carousel__img');
+    var caption = api.captions[i];
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lbCaption.textContent = caption ? caption.textContent : '';
+    lbCounter.textContent = (i + 1) + ' / ' + api.slides.length;
+    lbPrev.disabled = i === 0;
+    lbNext.disabled = i === api.slides.length - 1;
+  }
+
+  function openLightbox(carousel) {
+    activeCarousel = carousel;
+    lightboxEl.classList.add('is-open');
+    document.body.classList.add('is-lightbox-open');
+    syncLightbox();
+  }
+
+  function closeLightbox() {
+    lightboxEl.classList.remove('is-open');
+    document.body.classList.remove('is-lightbox-open');
+    activeCarousel = null;
+  }
+
+  lbClose.addEventListener('click', closeLightbox);
+  lightboxEl.addEventListener('click', function (e) {
+    if (e.target === lightboxEl) closeLightbox();
+  });
+  lbPrev.addEventListener('click', function () {
+    if (activeCarousel) activeCarousel._carouselApi.goTo(activeCarousel._carouselApi.getIndex() - 1);
+  });
+  lbNext.addEventListener('click', function () {
+    if (activeCarousel) activeCarousel._carouselApi.goTo(activeCarousel._carouselApi.getIndex() + 1);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (!lightboxEl.classList.contains('is-open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    else if (e.key === 'ArrowLeft') lbPrev.click();
+    else if (e.key === 'ArrowRight') lbNext.click();
+  });
+
+  // ---------- carousel: operates on slides/dots/captions already present in the HTML ----------
+  document.querySelectorAll('.carousel').forEach(function (carousel) {
+    var slides = Array.prototype.slice.call(carousel.querySelectorAll('.carousel__slide'));
+    var captions = Array.prototype.slice.call(carousel.querySelectorAll('.carousel__caption'));
+    var dots = Array.prototype.slice.call(carousel.querySelectorAll('.carousel__dot'));
+    var prevBtn = carousel.querySelector('.carousel__nav--prev');
+    var nextBtn = carousel.querySelector('.carousel__nav--next');
+    var counter = carousel.querySelector('.carousel__counter');
+    var frame = carousel.querySelector('.carousel__frame');
+    var index = 0;
+    slides.forEach(function (s, i) { if (s.classList.contains('is-active')) index = i; });
+
+    function render() {
+      slides.forEach(function (s, i) { s.classList.toggle('is-active', i === index); });
+      captions.forEach(function (c, i) { c.classList.toggle('is-active', i === index); });
+      dots.forEach(function (d, i) { d.classList.toggle('is-active', i === index); });
+      if (counter) counter.textContent = (index + 1) + ' / ' + slides.length;
+      if (prevBtn) prevBtn.disabled = index === 0;
+      if (nextBtn) nextBtn.disabled = index === slides.length - 1;
+      if (activeCarousel === carousel) syncLightbox();
+    }
+
+    function goTo(i) {
+      index = Math.max(0, Math.min(slides.length - 1, i));
+      render();
+    }
+
+    carousel._carouselApi = { slides: slides, captions: captions, getIndex: function () { return index; }, goTo: goTo };
+
+    if (prevBtn) prevBtn.addEventListener('click', function () { goTo(index - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { goTo(index + 1); });
+    dots.forEach(function (dot, i) { dot.addEventListener('click', function () { goTo(i); }); });
+    slides.forEach(function (slide) {
+      var img = slide.querySelector('.carousel__img');
+      if (img) img.addEventListener('click', function () { openLightbox(carousel); });
+    });
+
+    // swipe support for touch devices
+    var touchStartX = null;
+    if (frame) {
+      frame.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+      frame.addEventListener('touchend', function (e) {
+        if (touchStartX === null) return;
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 40) goTo(index + (dx < 0 ? 1 : -1));
+        touchStartX = null;
+      }, { passive: true });
+    }
+
+    render();
+  });
+
+  // ---------- active step highlight on scroll ----------
   var stepperItems = Array.prototype.slice.call(document.querySelectorAll('.stepper__item'));
   var sections = Array.prototype.slice.call(document.querySelectorAll('.step'));
   var io = new IntersectionObserver(function (entries) {
@@ -169,6 +618,39 @@
     });
   }, { rootMargin: '-30% 0px -60% 0px' });
   sections.forEach(function (s) { io.observe(s); });
+
+  // ---------- video modal: opens a local video from any [data-video-src] trigger ----------
+  var videoModalEl = document.getElementById('video-modal');
+  var videoPlayer = videoModalEl.querySelector('.video-modal__player');
+  var videoModalClose = videoModalEl.querySelector('.video-modal__close');
+
+  function openVideoModal(src) {
+    videoPlayer.src = src;
+    videoModalEl.classList.add('is-open');
+    document.body.classList.add('is-video-modal-open');
+    videoPlayer.play().catch(function () {});
+  }
+
+  function closeVideoModal() {
+    videoPlayer.pause();
+    videoPlayer.removeAttribute('src');
+    videoPlayer.load();
+    videoModalEl.classList.remove('is-open');
+    document.body.classList.remove('is-video-modal-open');
+  }
+
+  videoModalClose.addEventListener('click', closeVideoModal);
+  videoModalEl.addEventListener('click', function (e) {
+    if (e.target === videoModalEl) closeVideoModal();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && videoModalEl.classList.contains('is-open')) closeVideoModal();
+  });
+  document.querySelectorAll('[data-video-src]').forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      openVideoModal(trigger.getAttribute('data-video-src'));
+    });
+  });
 })();
 </script>
 
