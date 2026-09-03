@@ -9,14 +9,44 @@
 <body>
 
 <header class="hero">
-  <span class="hero__eyebrow">FLYER · TRIỂN KHAI CHO PHỤ HUYNH &amp; HỌC SINH</span>
+  <div class="hero__inner">
+    <a class="hero__brand" href="#gioi-thieu" aria-label="FLYER Exam - Trang chủ">
+      <img class="hero__logo" src="img/logo.png" alt="FLYER logo">
+    </a>
+
+    <div class="hero__menu-wrap">
+      <a class="hero__login" href="#dang-nhap-tai-khoan"><span aria-hidden="true">↪</span> Đăng nhập</a>
+      <nav class="hero__nav hero__nav--primary" aria-label="Menu chính">
+        <a class="hero__nav-link" href="#nhiem-vu"><span class="hero__nav-icon" aria-hidden="true">◎</span>Nhiệm vụ</a>
+        <a class="hero__nav-link" href="#luyen-tap"><span class="hero__nav-icon" aria-hidden="true">↗</span>Luyện tập</a>
+        <a class="hero__nav-link" href="#thach-dau"><span class="hero__nav-icon" aria-hidden="true">ϟ</span>Thách đấu</a>
+        <a class="hero__nav-link" href="#bingo"><span class="hero__nav-icon" aria-hidden="true">▦</span>Bingo</a>
+        <a class="hero__nav-link" href="#study"><span class="hero__nav-icon" aria-hidden="true">♧</span>Speaking, Writing</a>
+        <a class="hero__nav-link" href="#dao-de"><span class="hero__nav-icon" aria-hidden="true">⇄</span>Đảo đề</a>
+      </nav>
+      <div class="hero__dropdown">
+        <button type="button" class="hero__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Tính năng khác <span class="hero__dropdown-arrow" aria-hidden="true">⌄</span></button>
+        <nav class="hero__nav hero__dropdown-panel" aria-label="Tính năng khác">
+          <span class="hero__dropdown-label">Khám phá thêm</span>
+          <a class="hero__nav-link" href="#tra-cuu-tu-vung"><span class="hero__nav-icon" aria-hidden="true">⌕</span>Tra cứu từ vựng</a>
+          <a class="hero__nav-link" href="#xem-dap-an-lich-su"><span class="hero__nav-icon" aria-hidden="true">🕘</span>Xem đáp án và lịch sử làm bài</a>
+          <a class="hero__nav-link" href="https://drive.google.com/file/d/1DA23qHArNNXXNYD94w3r6xMY66OkzjPy/view" target="_blank" rel="noopener"><span class="hero__nav-icon" aria-hidden="true">🏆</span>Xem thành tích/xếp hạng</a>
+        </nav>
+      </div>
+    </div>
+  </div>
 </header>
 
 <div class="hero-video-wrap" id="gioi-thieu">
-  <video class="hero__video-player" controls preload="metadata">
-    <source src="video/Gio%CC%9B%CC%81i%20thie%CC%A3%CC%82u%20Pho%CC%80ng%20Thi%20A%CC%89o_B2B.mp4" type="video/mp4">
-    Trình duyệt của bạn không hỗ trợ phát video này.
-  </video>
+  <iframe
+    class="hero__video-player"
+    src="https://www.youtube-nocookie.com/embed/Z34n0yWeLVI?rel=0"
+    title="Giới thiệu Phòng Thi Ảo FLYER Exam"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+    loading="lazy"
+  ></iframe>
 </div>
 
 <div class="hero-caption">
@@ -41,7 +71,7 @@
       </a>
       <span class="diagram__connector" aria-hidden="true"></span>
 
-      <div class="diagram__group" id="trai-nghiem-flyer">
+      <div class="diagram__group">
         <span class="diagram__group-label">1. Trải nghiệm học tập trên FLYER</span>
         <div class="diagram__grid">
           <a class="diagram__card" href="#dang-nhap-tai-khoan"><span class="diagram__card-num">1.1</span><span class="diagram__card-label">Đăng nhập</span></a>
@@ -49,7 +79,7 @@
           <a class="diagram__card" href="#luyen-tap"><span class="diagram__card-num">1.3</span><span class="diagram__card-label">Luyện tập</span></a>
           <a class="diagram__card" href="#thach-dau"><span class="diagram__card-num">1.4</span><span class="diagram__card-label">Thách đấu</span></a>
           <a class="diagram__card" href="#bingo"><span class="diagram__card-num">1.5</span><span class="diagram__card-label">Bingo</span></a>
-          <a class="diagram__card" href="#study"><span class="diagram__card-num">1.6</span><span class="diagram__card-label">Level, Speaking, Writing</span></a>
+          <a class="diagram__card" href="#study"><span class="diagram__card-num">1.6</span><span class="diagram__card-label">Study, Speaking, Writing</span></a>
           <a class="diagram__card" href="#dao-de"><span class="diagram__card-num">1.7</span><span class="diagram__card-label">Đảo đề</span></a>
           <a class="diagram__card" href="#tinh-nang-khac"><span class="diagram__card-num">1.8</span><span class="diagram__card-label">Tính năng khác</span></a>
         </div>
@@ -66,13 +96,19 @@
 
 <main>
 
-  <section class="step">
+  <section class="step" id="trai-nghiem-flyer">
     <div class="step__head">
       <div class="step__badge">1</div>
       <div>
         <h2 class="step__title">Trải nghiệm học tập trên FLYER</h2>
         <p class="step__summary">Hành trình của con trên ứng dụng FLYER — từ đăng nhập đến khám phá đầy đủ các tính năng luyện tập.</p>
       </div>
+    </div>
+
+    <div class="app-links">
+      <span class="app-links__label">📲 Tải app học sinh:</span>
+      <a class="chip chip--store" href="https://play.google.com/store/apps/details?id=com.flyer.exam" target="_blank" rel="noopener">🤖 Android (Google Play)</a>
+      <a class="chip chip--store" href="https://apps.apple.com/us/app/flyer-virtual-english-tests/id1671502218" target="_blank" rel="noopener">🍎 iOS (App Store)</a>
     </div>
 
     <div class="part" id="dang-nhap-tai-khoan">
@@ -83,8 +119,8 @@
       <p class="part__desc">Con dùng đúng tài khoản (số điện thoại/tên đăng nhập) và mật khẩu do giáo viên cấp để đăng nhập vào FLYER qua domain của trung tâm (ví dụ: <strong>https://domain.flyer.us/</strong> — trung tâm gửi link cụ thể).</p>
 
       <div class="step__toolbar">
-        <span class="chip chip--doc chip--disabled">📄 Tài liệu chi tiết (cập nhật sau)</span>
-        <span class="chip chip--video chip--disabled">🎥 Video hướng dẫn (cập nhật sau)</span>
+        <a href="https://www.youtube.com/watch?v=XToKxtOYd5s&feature=youtu.be" target="_blank" rel="noopener" class="chip chip--doc">📄 Link đăng ký</a>
+        <a href="https://www.youtube.com/watch?v=CpIAIPaXLoY&feature=youtu.be" target="_blank" rel="noopener" class="chip chip--video">🎥 Active tài khoản</a>
       </div>
 
       <div class="carousel" data-carousel>
@@ -128,10 +164,10 @@
         <li><span class="mini-steps__num">3</span><span>Nhấn nút <strong>Bắt đầu</strong> để làm bài. Sau khi hoàn thành, hệ thống sẽ trả kết quả tức thì kèm theo giải thích đáp án chi tiết.</span></li>
       </ol>
 
-      <div class="step__toolbar">
+      <!-- <div class="step__toolbar">
         <span class="chip chip--doc chip--disabled">📄 Tài liệu chi tiết (cập nhật sau)</span>
         <span class="chip chip--video chip--disabled">🎥 Video hướng dẫn (cập nhật sau)</span>
-      </div>
+      </div> -->
 
       <div class="canva-embed">
         <iframe src="https://iframely.net/o7UInUp9" allowfullscreen="" allow="fullscreen *;"></iframe>
@@ -145,10 +181,10 @@
       </div>
       <p class="part__desc">Mục Luyện tập cho phép con tự ôn luyện thêm theo chủ đề, kỹ năng, cấp độ ngoài các bài đã được giao.</p>
 
-      <div class="step__toolbar">
+      <!-- <div class="step__toolbar">
         <span class="chip chip--doc chip--disabled">📄 Tài liệu chi tiết (cập nhật sau)</span>
         <span class="chip chip--video chip--disabled">🎥 Video hướng dẫn (cập nhật sau)</span>
-      </div>
+      </div> -->
 
       <div class="carousel" data-carousel>
         <div class="carousel__frame">
@@ -182,14 +218,19 @@
 
       <div class="step__toolbar">
         <a href="https://help.flyer.vn/danh-cho-hoc-sinh/thach-dau" target="_blank" class="chip chip--doc" >📄 Tài liệu chi tiết</a>
-        <button type="button" class="chip chip--video" data-video-src="video/S%E1%BA%A3nh%20th%C3%A1ch%20%C4%91%E1%BA%A5u.mp4">🎥 Video hướng dẫn</button>
+        <a href="https://www.youtube.com/watch?v=ezPMNxJXELA" target="_blank" rel="noopener" class="chip chip--video">🎥 Video hướng dẫn</a>
       </div>
 
       <div class="video-embed">
-        <video class="video-embed__player" controls preload="metadata">
-          <source src="video/S%E1%BA%A3nh%20th%C3%A1ch%20%C4%91%E1%BA%A5u.mp4" type="video/mp4">
-          Trình duyệt của bạn không hỗ trợ phát video này.
-        </video>
+        <iframe
+          class="video-embed__player"
+          src="https://www.youtube.com/embed/ezPMNxJXELA?rel=0"
+          title="Video thách đấu FLYER"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
       </div>
       <p class="video-embed__caption">Video giới thiệu Sảnh thách đấu — nơi con thách đấu trực tiếp với bạn bè qua một bài tập để thi đua điểm số.</p>
     </div>
@@ -203,14 +244,19 @@
 
       <div class="step__toolbar">
         <a href="https://help.flyer.vn/danh-cho-hoc-sinh/tro-chuyen-voi-bingo-ai" target="_blank" class="chip chip--doc" >📄 Tài liệu chi tiết</a>
-        <button type="button" class="chip chip--video" data-video-src="video/app_bingo_ai.mp4">🎥 Video hướng dẫn</button>
+        <a href="https://www.youtube.com/watch?v=O7jY3zhgP0s" target="_blank" rel="noopener" class="chip chip--video">🎥 Video hướng dẫn</a>
       </div>
 
       <div class="video-embed">
-        <video class="video-embed__player" controls preload="metadata">
-          <source src="video/app_bingo_ai.mp4" type="video/mp4">
-          Trình duyệt của bạn không hỗ trợ phát video này.
-        </video>
+        <iframe
+          class="video-embed__player"
+          src="https://www.youtube.com/embed/O7jY3zhgP0s?rel=0"
+          title="Video Luyện tập cùng Bingo"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
       </div>
       <p class="video-embed__caption">Video giới thiệu app Bingo AI — trợ lý AI đồng hành cùng con luyện Speaking, Writing.</p>
     </div>
@@ -229,10 +275,10 @@
         </div>
         <p class="subpart__desc">Study chia lộ trình ôn tập thành từng chặng theo level — con hoàn thành lần lượt từng chặng để mở khoá chặng tiếp theo, hệ thống tự theo dõi tiến độ học (số buổi đã hoàn thành/tổng số buổi của chương trình).</p>
 
-        <div class="step__toolbar">
+        <!-- <div class="step__toolbar">
           <span class="chip chip--doc chip--disabled">📄 Tài liệu chi tiết (cập nhật sau)</span>
           <span class="chip chip--video chip--disabled">🎥 Video hướng dẫn (cập nhật sau)</span>
-        </div>
+        </div> -->
 
         <div class="carousel" data-carousel>
           <div class="carousel__frame">
@@ -363,14 +409,19 @@
 
         <div class="step__toolbar">
           <span class="chip chip--doc chip--disabled">📄 Tài liệu chi tiết (cập nhật sau)</span>
-          <button type="button" class="chip chip--video" data-video-src="video/Global_Journey.mp4">🎥 Video hướng dẫn</button>
+          <a href="https://www.youtube.com/watch?v=R1JeV_0spvM" target="_blank" rel="noopener" class="chip chip--video">🎥 Video hướng dẫn</a>
         </div>
 
         <div class="video-embed">
-          <video class="video-embed__player" controls preload="metadata">
-            <source src="video/Global_Journey.mp4" type="video/mp4">
-            Trình duyệt của bạn không hỗ trợ phát video này.
-          </video>
+          <iframe
+            class="video-embed__player"
+            src="https://www.youtube.com/embed/R1JeV_0spvM?rel=0"
+            title="Video Luyện tập theo Global Journey"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
         </div>
         <p class="video-embed__caption">Video hướng dẫn luyện tập theo Global Journey.</p>
       </div>
@@ -392,14 +443,19 @@
 
         <div class="step__toolbar">
           <span class="chip chip--doc chip--disabled">📄 Tài liệu chi tiết (cập nhật sau)</span>
-          <button type="button" class="chip chip--video" data-video-src="video/tuvung.mp4">🎥 Video hướng dẫn</button>
+          <a href="https://www.youtube.com/watch?v=T0CMLJXxCwQ" target="_blank" rel="noopener" class="chip chip--video">🎥 Video hướng dẫn</a>
         </div>
 
         <div class="video-embed">
-          <video class="video-embed__player" controls preload="metadata">
-            <source src="video/tuvung.mp4" type="video/mp4">
-            Trình duyệt của bạn không hỗ trợ phát video này.
-          </video>
+          <iframe
+            class="video-embed__player"
+            src="https://www.youtube.com/embed/T0CMLJXxCwQ?rel=0"
+            title="Video Tra cứu từ vựng"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
         </div>
         <p class="video-embed__caption">Video hướng dẫn tra cứu từ vựng ngay trong lúc học.</p>
       </div>
@@ -483,6 +539,12 @@
       </div>
     </div>
     <p class="step__desc">Và phụ huynh có thể theo dõi từng bước tiến bộ của con ngay trên app Phụ huynh.</p>
+
+    <div class="app-links">
+      <span class="app-links__label">📲 Tải app phụ huynh:</span>
+      <a class="chip chip--store" href="https://apps.apple.com/vn/app/flyer-for-teachers/id6449689901" target="_blank" rel="noopener">🍎 iOS (App Store)</a>
+      <a class="chip chip--store" href="https://play.google.com/store/apps/details?id=com.flyer.partner&hl=en&gl=US" target="_blank" rel="noopener">🤖 Android (Google Play)</a>
+    </div>
 
     <div class="step__toolbar">
       <span class="chip chip--doc chip--disabled">📄 Tài liệu chi tiết (cập nhật sau)</span>
