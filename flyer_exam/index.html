@@ -14,7 +14,14 @@
       <img class="hero__logo" src="img/logo.png" alt="FLYER logo">
     </a>
 
-    <div class="hero__menu-wrap">
+    <button type="button" class="hero__menu-toggle" id="menu-toggle" aria-label="Mở menu" aria-expanded="false" aria-controls="hero-menu">
+      <span class="hero__menu-toggle-bar"></span>
+      <span class="hero__menu-toggle-bar"></span>
+      <span class="hero__menu-toggle-bar"></span>
+    </button>
+
+    <div class="hero__menu-wrap" id="hero-menu">
+      <button type="button" class="hero__menu-close" id="menu-close" aria-label="Đóng menu">×</button>
       <a class="hero__login" href="#dang-nhap-tai-khoan"><span aria-hidden="true">↪</span> Đăng nhập</a>
       <nav class="hero__nav hero__nav--primary" aria-label="Menu chính">
         <a class="hero__nav-link" href="#nhiem-vu"><span class="hero__nav-icon" aria-hidden="true">◎</span>Nhiệm vụ</a>
@@ -35,6 +42,7 @@
       </div>
     </div>
   </div>
+  <div class="hero__backdrop" id="menu-backdrop"></div>
 </header>
 
 <div class="hero-video-wrap" id="gioi-thieu">
@@ -592,6 +600,67 @@
 <script>
 (function () {
   "use strict";
+
+  // ---------- mobile menu: hamburger toggle opens the right-side drawer ----------
+  var menuToggle = document.getElementById('menu-toggle');
+  var menuClose = document.getElementById('menu-close');
+  var menuBackdrop = document.getElementById('menu-backdrop');
+  var heroMenu = document.getElementById('hero-menu');
+
+  function openMenu() {
+    heroMenu.classList.add('is-open');
+    menuBackdrop.classList.add('is-open');
+    menuToggle.classList.add('is-active');
+    menuToggle.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('is-menu-open');
+  }
+
+  function closeMenu() {
+    heroMenu.classList.remove('is-open');
+    menuBackdrop.classList.remove('is-open');
+    menuToggle.classList.remove('is-active');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('is-menu-open');
+    var openDropdown = heroMenu.querySelector('.hero__dropdown.is-open');
+    if (openDropdown) {
+      openDropdown.classList.remove('is-open');
+      openDropdown.querySelector('.hero__dropdown-toggle').setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  menuToggle.addEventListener('click', function () {
+    if (heroMenu.classList.contains('is-open')) closeMenu();
+    else openMenu();
+  });
+  menuClose.addEventListener('click', closeMenu);
+  menuBackdrop.addEventListener('click', closeMenu);
+  heroMenu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', closeMenu);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && heroMenu.classList.contains('is-open')) closeMenu();
+  });
+
+  // ---------- "Tính năng khác" dropdown: click-to-toggle (works alongside the hover/focus-within CSS) ----------
+  var heroDropdown = document.querySelector('.hero__dropdown');
+  var dropdownToggle = heroDropdown.querySelector('.hero__dropdown-toggle');
+
+  dropdownToggle.addEventListener('click', function () {
+    var isOpen = heroDropdown.classList.toggle('is-open');
+    dropdownToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+  document.addEventListener('click', function (e) {
+    if (!heroDropdown.contains(e.target)) {
+      heroDropdown.classList.remove('is-open');
+      dropdownToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && heroDropdown.classList.contains('is-open')) {
+      heroDropdown.classList.remove('is-open');
+      dropdownToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
 
   // ---------- lightbox: shows the active slide of whichever carousel opened it ----------
   var lightboxEl = document.getElementById('lightbox');
