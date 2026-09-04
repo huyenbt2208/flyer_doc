@@ -493,19 +493,19 @@
             <button class="carousel__nav carousel__nav--prev" type="button" aria-label="Ảnh trước"></button>
             <div class="carousel__slides">
               <figure class="carousel__slide is-active">
-                <img class="carousel__img" src="img/6.21lichsu.avif" alt="Ngay sau khi nộp bài, màn hình kết quả hiện điểm số — bấm “Xem đáp án” để xem đáp án của bài vừa làm.">
+                <img class="carousel__img" src="img/6.21lichsu.png" alt="Ngay sau khi nộp bài, màn hình kết quả hiện điểm số — bấm “Xem đáp án” để xem đáp án của bài vừa làm.">
               </figure>
               <figure class="carousel__slide">
-                <img class="carousel__img" src="img/6.22lichsu.avif" alt="Muốn xem lại các bài đã làm trước đó, quay về trang chủ và bấm biểu tượng “REPORT” ở góc trên.">
+                <img class="carousel__img" src="img/6.22lichsu.png" alt="Muốn xem lại các bài đã làm trước đó, quay về trang chủ và bấm biểu tượng “REPORT” ở góc trên.">
               </figure>
               <figure class="carousel__slide">
-                <img class="carousel__img" src="img/6.23lichsu.avif" alt="Trang Lịch sử làm bài liệt kê tất cả bài đã nộp — có thể lọc theo Cấp độ, Kỹ năng, Tên bài kiểm tra, hoặc tải kết quả về máy.">
+                <img class="carousel__img" src="img/6.23lichsu.png" alt="Trang Lịch sử làm bài liệt kê tất cả bài đã nộp — có thể lọc theo Cấp độ, Kỹ năng, Tên bài kiểm tra, hoặc tải kết quả về máy.">
               </figure>
               <figure class="carousel__slide">
-                <img class="carousel__img" src="img/6.24lichsu.avif" alt="Bấm vào một bài trong danh sách để mở lại màn hình kết quả của bài đó, kèm nút “Xem đáp án”.">
+                <img class="carousel__img" src="img/6.24lichsu.png" alt="Bấm vào một bài trong danh sách để mở lại màn hình kết quả của bài đó, kèm nút “Xem đáp án”.">
               </figure>
               <figure class="carousel__slide">
-                <img class="carousel__img" src="img/6.25lichsu.avif" alt="Màn hình xem đáp án hiển thị chi tiết từng câu — đánh dấu đúng/sai để con biết chính xác cần cải thiện ở đâu.">
+                <img class="carousel__img" src="img/6.25lichsu.png" alt="Màn hình xem đáp án hiển thị chi tiết từng câu — đánh dấu đúng/sai để con biết chính xác cần cải thiện ở đâu.">
               </figure>
             </div>
             <span class="carousel__zoom-hint">🔍 Bấm để xem ảnh lớn</span>
@@ -556,14 +556,19 @@
 
     <div class="step__toolbar">
       <span class="chip chip--doc chip--disabled">📄 Tài liệu chi tiết (cập nhật sau)</span>
-      <button type="button" class="chip chip--video" data-video-src="video/phuhuynh.mp4">🎥 Video hướng dẫn</button>
+      <a href="https://www.youtube.com/watch?v=sz9JVpcs4Lw" target="_blank" rel="noopener" class="chip chip--video">🎥 Video hướng dẫn</a>
     </div>
 
     <div class="video-embed">
-      <video class="video-embed__player" controls preload="metadata">
-        <source src="video/phuhuynh.mp4" type="video/mp4">
-        Trình duyệt của bạn không hỗ trợ phát video này.
-      </video>
+      <iframe
+        class="video-embed__player"
+        src="https://www.youtube.com/embed/sz9JVpcs4Lw?rel=0"
+        title="Video giới thiệu app Phụ huynh"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
     </div>
     <p class="video-embed__caption">Video giới thiệu app Phụ huynh — theo dõi tiến bộ học tập của con.</p>
 
@@ -587,13 +592,6 @@
   <div class="lightbox__footer">
     <p class="lightbox__caption"></p>
     <span class="lightbox__counter"></span>
-  </div>
-</div>
-
-<div class="video-modal" id="video-modal">
-  <div class="video-modal__dialog">
-    <button class="video-modal__close" type="button" aria-label="Đóng">×</button>
-    <video class="video-modal__player" controls playsinline></video>
   </div>
 </div>
 
@@ -783,38 +781,6 @@
   }, { rootMargin: '-30% 0px -60% 0px' });
   sections.forEach(function (s) { io.observe(s); });
 
-  // ---------- video modal: opens a local video from any [data-video-src] trigger ----------
-  var videoModalEl = document.getElementById('video-modal');
-  var videoPlayer = videoModalEl.querySelector('.video-modal__player');
-  var videoModalClose = videoModalEl.querySelector('.video-modal__close');
-
-  function openVideoModal(src) {
-    videoPlayer.src = src;
-    videoModalEl.classList.add('is-open');
-    document.body.classList.add('is-video-modal-open');
-    videoPlayer.play().catch(function () {});
-  }
-
-  function closeVideoModal() {
-    videoPlayer.pause();
-    videoPlayer.removeAttribute('src');
-    videoPlayer.load();
-    videoModalEl.classList.remove('is-open');
-    document.body.classList.remove('is-video-modal-open');
-  }
-
-  videoModalClose.addEventListener('click', closeVideoModal);
-  videoModalEl.addEventListener('click', function (e) {
-    if (e.target === videoModalEl) closeVideoModal();
-  });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && videoModalEl.classList.contains('is-open')) closeVideoModal();
-  });
-  document.querySelectorAll('[data-video-src]').forEach(function (trigger) {
-    trigger.addEventListener('click', function () {
-      openVideoModal(trigger.getAttribute('data-video-src'));
-    });
-  });
 })();
 </script>
 
